@@ -3,6 +3,7 @@ package com.microsoft.playwright.jmeter
 import com.microsoft.playwright.Browser
 import com.microsoft.playwright.Playwright
 import org.apache.jmeter.engine.StandardJMeterEngine
+import org.apache.jmeter.threads.JMeterThread
 import org.apache.jmeter.threads.ListenerNotifier
 import org.apache.jmeter.threads.ThreadGroup
 import org.apache.jorphan.collections.ListedHashTree
@@ -39,13 +40,27 @@ class PlaywrightBrowserThreadGroup : ThreadGroup() {
             log.warn("Warning: Threads not stopped.")
         }
         browserInstances.forEach {
-            log.info("Stopping Playwright ${browserType} browser in thread ${it.key}.")
+            log.info("Stopping Playwright $browserType browser in thread ${it.key}.")
             it.value?.close()
         }
         playwrightInstances.forEach {
             log.info("Stopping Playwright instance in thread ${it.key}.")
             it.value?.close()
         }
+    }
+
+    override fun threadFinished(thread: JMeterThread?) {
+        if (thread != null) {
+            if (browserInstances.containsKey(thread.threadNum)){
+                log.info("Stopping Playwright $browserType browser in thread ${thread.threadNum}.")
+                browserInstances[thread.threadNum]?.close();
+            }
+            if (playwrightInstances.containsKey(thread.threadNum)){
+                log.info("Stopping Playwright instance in thread ${thread.threadNum}.")
+                playwrightInstances[thread.threadNum]?.close();
+            }
+        }
+        super.threadFinished(thread)
     }
 
     fun getBrowser(threadNum: Int): Browser? {
@@ -59,7 +74,7 @@ class PlaywrightBrowserThreadGroup : ThreadGroup() {
             if (browserInstances.containsKey(threadNum)){
                 throw Exception("Invalid state. Cannot have a playwright instance with no browser.")
             }
-            log.info("Spawning Playwright ${browserType} browser in thread ${threadNum}.")
+            log.info("Spawning Playwright $browserType browser in thread ${threadNum}.")
             val browser = when (browserType) {
                 BrowserType.Chromium -> {
                     playwright!!.chromium().launch()
