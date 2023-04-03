@@ -23,21 +23,21 @@ class PlaywrightBrowserThreadGroup : ThreadGroup() {
             setProperty(BROWSER, value.toString())
         }
 
-    private lateinit var playwright: Playwright
-    lateinit var browser: Browser
+    private var playwright: Playwright? = null
+    var browser: Browser? = null
 
     override fun start(groupCount: Int, notifier: ListenerNotifier?, threadGroupTree: ListedHashTree?, engine: StandardJMeterEngine?) {
         log.info("Starting playwright thread pool with ${browserType}.")
         playwright = Playwright.create()
         browser = when (browserType) {
             BrowserType.Chromium -> {
-                playwright.chromium().launch()
+                playwright!!.chromium().launch()
             }
             BrowserType.Webkit -> {
-                playwright.webkit().launch()
+                playwright!!.webkit().launch()
             }
             BrowserType.Firefox -> {
-                playwright.firefox().launch()
+                playwright!!.firefox().launch()
             }
         }
         super.start(groupCount, notifier, threadGroupTree, engine)
@@ -45,13 +45,13 @@ class PlaywrightBrowserThreadGroup : ThreadGroup() {
 
     override fun tellThreadsToStop() {
         log.info("Stopping browsers.")
-        browser.close()
+        browser?.close()
         super.tellThreadsToStop()
     }
 
     override fun stop() {
         log.info("Stopping playwright instances.")
-        playwright.close()
+        playwright?.close()
         super.stop()
     }
 
