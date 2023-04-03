@@ -19,6 +19,11 @@ public class PlaywrightSamplerGUI extends AbstractSamplerGui {
 
     public PlaywrightSamplerGUI() {
         super();
+        setLayout(new BorderLayout(0, 5));
+        setBorder(makeBorder());
+
+        Box box = Box.createVerticalBox();
+        box.add(makeTitlePanel());
         init();
     }
 
