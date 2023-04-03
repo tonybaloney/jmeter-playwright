@@ -15,6 +15,10 @@ public class PlaywrightBrowserThreadGroupGUI extends AbstractThreadGroupGui {
     String[] browserOptions = {"Chromium", "Firefox", "Webkit"};
     private final JComboBox browserComboBox = new JComboBox(browserOptions);
     private LoopControlPanel loopPanel;
+    private static final String THREAD_NAME = "Thread Field";
+    private JTextField threadInput;
+
+
 
     public PlaywrightBrowserThreadGroupGUI() {
         super();
@@ -28,7 +32,20 @@ public class PlaywrightBrowserThreadGroupGUI extends AbstractThreadGroupGui {
         threadPropsPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
                 JMeterUtils.getResString("thread_properties"))); // $NON-NLS-1$
 
-        // RAMP-UP
+        // NUMBER OF THREADS
+        JPanel threadPanel = new JPanel(new BorderLayout(5, 0));
+
+        JLabel threadLabel = new JLabel(JMeterUtils.getResString("number_of_threads")); // $NON-NLS-1$
+        threadPanel.add(threadLabel, BorderLayout.WEST);
+
+        threadInput = new JTextField(5);
+        threadInput.setName(THREAD_NAME);
+        threadLabel.setLabelFor(threadInput);
+        threadPanel.add(threadInput, BorderLayout.CENTER);
+
+        threadPropsPanel.add(threadPanel);
+
+        // Browser
         JPanel browserPanel = new JPanel(new BorderLayout(5, 0));
         JLabel browserLabel = new JLabel("Browser");
         browserPanel.add(browserLabel, BorderLayout.WEST);
@@ -68,6 +85,7 @@ public class PlaywrightBrowserThreadGroupGUI extends AbstractThreadGroupGui {
         if (element instanceof AbstractThreadGroup) {
             ((AbstractThreadGroup) element).setSamplerController((LoopController) loopPanel.createTestElement());
         }
+        element.setProperty(AbstractThreadGroup.NUM_THREADS, threadInput.getText());
 
         if (element instanceof PlaywrightBrowserThreadGroup) {
             PlaywrightBrowserThreadGroup threadGroup = (PlaywrightBrowserThreadGroup) element;
@@ -79,13 +97,13 @@ public class PlaywrightBrowserThreadGroupGUI extends AbstractThreadGroupGui {
             } else if (selectedIndex == 2) {
                 threadGroup.setBrowserType(BrowserType.Webkit);
             }
-            threadGroup.setNumThreads(1);
         }
     }
 
     @Override
     public void configure(TestElement element) {
         super.configure(element);
+        threadInput.setText(element.getPropertyAsString(AbstractThreadGroup.NUM_THREADS));
         loopPanel.configure((TestElement) element.getProperty(AbstractThreadGroup.MAIN_CONTROLLER).getObjectValue());
         if (element instanceof PlaywrightBrowserThreadGroup) {
             PlaywrightBrowserThreadGroup threadGroup = (PlaywrightBrowserThreadGroup) element;
@@ -116,5 +134,6 @@ public class PlaywrightBrowserThreadGroupGUI extends AbstractThreadGroupGui {
 
     private void initGui(){
         loopPanel.clearGui();
+        threadInput.setText("1"); // $NON-NLS-1$
     }
 }

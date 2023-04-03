@@ -86,7 +86,7 @@ class PlaywrightSampler : AbstractSampler() {
         log.info("Sampling $url with Playwright, waiting for $waitUntilState.")
 
         if (this.threadContext.threadGroup is PlaywrightBrowserThreadGroup){
-            val browser = (threadContext.threadGroup as PlaywrightBrowserThreadGroup).browser
+            val browser = (threadContext.threadGroup as PlaywrightBrowserThreadGroup).getBrowser(threadContext.thread.threadNum)
 
             if (browser == null){
                 result.isSuccessful = false
@@ -101,6 +101,8 @@ class PlaywrightSampler : AbstractSampler() {
                     result.errorCount += 1
                 }
             }
+        } else {
+            log.error("Playwright sampler must be used inside a Playwright Thread Group.")
         }
         log.info("Completed sample of $url with Playwright.")
         result.sampleEnd()
