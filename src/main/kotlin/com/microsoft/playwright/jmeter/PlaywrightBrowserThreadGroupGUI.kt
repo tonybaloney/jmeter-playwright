@@ -1,139 +1,107 @@
-package com.microsoft.playwright.jmeter;
+package com.microsoft.playwright.jmeter
 
-import org.apache.jmeter.control.LoopController;
-import org.apache.jmeter.control.gui.LoopControlPanel;
-import org.apache.jmeter.gui.util.VerticalPanel;
-import org.apache.jmeter.testelement.TestElement;
-import org.apache.jmeter.threads.AbstractThreadGroup;
-import org.apache.jmeter.threads.gui.AbstractThreadGroupGui;
-import org.apache.jmeter.util.JMeterUtils;
+import org.apache.jmeter.control.LoopController
+import org.apache.jmeter.control.gui.LoopControlPanel
+import org.apache.jmeter.gui.util.VerticalPanel
+import org.apache.jmeter.testelement.TestElement
+import org.apache.jmeter.threads.AbstractThreadGroup
+import org.apache.jmeter.threads.gui.AbstractThreadGroupGui
+import org.apache.jmeter.util.JMeterUtils
+import java.awt.BorderLayout
+import javax.swing.*
 
-import javax.swing.*;
-import java.awt.*;
+class PlaywrightBrowserThreadGroupGUI : AbstractThreadGroupGui() {
+    private val browserComboBox: JComboBox<BrowserType> = JComboBox<BrowserType>(BrowserType.values())
+    private var loopPanel: LoopControlPanel = LoopControlPanel(false)
+    private var threadInput: JTextField = JTextField(5)
 
-public class PlaywrightBrowserThreadGroupGUI extends AbstractThreadGroupGui {
-    String[] browserOptions = {"Chromium", "Firefox", "Webkit"};
-    private final JComboBox browserComboBox = new JComboBox(browserOptions);
-    private LoopControlPanel loopPanel;
-    private static final String THREAD_NAME = "Thread Field";
-    private JTextField threadInput;
-
-
-
-    public PlaywrightBrowserThreadGroupGUI() {
-        super();
-        init();
-        initGui();
+    init {
+        init()
+        initGui()
     }
 
-    private void init(){
+    private fun init() {
         // THREAD PROPERTIES
-        VerticalPanel threadPropsPanel = new VerticalPanel();
-        threadPropsPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
-                JMeterUtils.getResString("thread_properties"))); // $NON-NLS-1$
+        val threadPropsPanel = VerticalPanel()
+        threadPropsPanel.border = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
+                JMeterUtils.getResString("thread_properties")) // $NON-NLS-1$
 
         // NUMBER OF THREADS
-        JPanel threadPanel = new JPanel(new BorderLayout(5, 0));
+        val threadPanel = JPanel(BorderLayout(5, 0))
+        val threadLabel = JLabel(JMeterUtils.getResString("number_of_threads")) // $NON-NLS-1$
+        threadPanel.add(threadLabel, BorderLayout.WEST)
 
-        JLabel threadLabel = new JLabel(JMeterUtils.getResString("number_of_threads")); // $NON-NLS-1$
-        threadPanel.add(threadLabel, BorderLayout.WEST);
-
-        threadInput = new JTextField(5);
-        threadInput.setName(THREAD_NAME);
-        threadLabel.setLabelFor(threadInput);
-        threadPanel.add(threadInput, BorderLayout.CENTER);
-
-        threadPropsPanel.add(threadPanel);
+        threadInput.name = THREAD_NAME
+        threadLabel.labelFor = threadInput
+        threadPanel.add(threadInput, BorderLayout.CENTER)
+        threadPropsPanel.add(threadPanel)
 
         // Browser
-        JPanel browserPanel = new JPanel(new BorderLayout(5, 0));
-        JLabel browserLabel = new JLabel("Browser");
-        browserPanel.add(browserLabel, BorderLayout.WEST);
-
-        browserComboBox.setName("Playwright.Browser");
-        browserLabel.setLabelFor(browserComboBox);
-        browserPanel.add(browserComboBox, BorderLayout.CENTER);
-
-        threadPropsPanel.add(browserPanel);
-
-        threadPropsPanel.add(createControllerPanel());
-        VerticalPanel integrationPanel = new VerticalPanel();
-        integrationPanel.add(threadPropsPanel);
-        add(integrationPanel, BorderLayout.CENTER);
+        val browserPanel = JPanel(BorderLayout(5, 0))
+        val browserLabel = JLabel("Browser")
+        browserPanel.add(browserLabel, BorderLayout.WEST)
+        browserComboBox.name = "Playwright.Browser"
+        browserLabel.labelFor = browserComboBox
+        browserPanel.add(browserComboBox, BorderLayout.CENTER)
+        threadPropsPanel.add(browserPanel)
+        createControllerPanel()
+        threadPropsPanel.add(loopPanel)
+        val integrationPanel = VerticalPanel()
+        integrationPanel.add(threadPropsPanel)
+        add(integrationPanel, BorderLayout.CENTER)
     }
 
-    @Override
-    public String getLabelResource() {
-        return "Playwright Thread Group";
+    override fun getLabelResource(): String {
+        return "Playwright Thread Group"
     }
 
-    @Override
-    public String getStaticLabel() {
-        return getLabelResource();
+    override fun getStaticLabel(): String {
+        return labelResource
     }
 
-    @Override
-    public TestElement createTestElement() {
-        PlaywrightBrowserThreadGroup threadGroup = new PlaywrightBrowserThreadGroup();
-        modifyTestElement(threadGroup);
-        return threadGroup;
+    override fun createTestElement(): TestElement {
+        val threadGroup = PlaywrightBrowserThreadGroup()
+        modifyTestElement(threadGroup)
+        return threadGroup
     }
 
-    @Override
-    public void modifyTestElement(TestElement element) {
-        super.configureTestElement(element);
-        if (element instanceof AbstractThreadGroup) {
-            ((AbstractThreadGroup) element).setSamplerController((LoopController) loopPanel.createTestElement());
+    override fun modifyTestElement(element: TestElement) {
+        super.configureTestElement(element)
+        if (element is AbstractThreadGroup) {
+            element.setSamplerController(loopPanel.createTestElement() as LoopController)
         }
-        element.setProperty(AbstractThreadGroup.NUM_THREADS, threadInput.getText());
-
-        if (element instanceof PlaywrightBrowserThreadGroup) {
-            PlaywrightBrowserThreadGroup threadGroup = (PlaywrightBrowserThreadGroup) element;
-            int selectedIndex = browserComboBox.getSelectedIndex();
-            if (selectedIndex == 0) {
-                threadGroup.setBrowserType(BrowserType.Chromium);
-            } else if (selectedIndex == 1) {
-                threadGroup.setBrowserType(BrowserType.Firefox);
-            } else if (selectedIndex == 2) {
-                threadGroup.setBrowserType(BrowserType.Webkit);
-            }
+        element.setProperty(AbstractThreadGroup.NUM_THREADS, threadInput.text)
+        if (element is PlaywrightBrowserThreadGroup) {
+            element.browserType = browserComboBox.selectedItem as BrowserType
         }
     }
 
-    @Override
-    public void configure(TestElement element) {
-        super.configure(element);
-        threadInput.setText(element.getPropertyAsString(AbstractThreadGroup.NUM_THREADS));
-        loopPanel.configure((TestElement) element.getProperty(AbstractThreadGroup.MAIN_CONTROLLER).getObjectValue());
-        if (element instanceof PlaywrightBrowserThreadGroup) {
-            PlaywrightBrowserThreadGroup threadGroup = (PlaywrightBrowserThreadGroup) element;
-            BrowserType browserType = threadGroup.getBrowserType();
-            if (browserType == BrowserType.Chromium) {
-                browserComboBox.setSelectedItem(0);
-            } else if (browserType == BrowserType.Firefox) {
-                browserComboBox.setSelectedItem(1);
-            } else if (browserType == BrowserType.Webkit) {
-                browserComboBox.setSelectedItem(2);
-            }
+    override fun configure(element: TestElement) {
+        super.configure(element)
+        threadInput.text = element.getPropertyAsString(AbstractThreadGroup.NUM_THREADS)
+        loopPanel.configure(element.getProperty(AbstractThreadGroup.MAIN_CONTROLLER).objectValue as TestElement)
+        if (element is PlaywrightBrowserThreadGroup) {
+            browserComboBox.selectedItem = element.browserType
         }
     }
 
-    private JPanel createControllerPanel() {
-        loopPanel = new LoopControlPanel(false);
-        LoopController looper = (LoopController) loopPanel.createTestElement();
-        looper.setLoops(1);
-        loopPanel.configure(looper);
-        return loopPanel;
+    private fun createControllerPanel(){
+        val looper = loopPanel.createTestElement() as LoopController
+        looper.loops = 1
+        loopPanel.configure(looper)
     }
 
-    @Override
-    public void clearGui(){
-        super.clearGui();
-        initGui();
+    override fun clearGui() {
+        super.clearGui()
+        initGui()
     }
 
-    private void initGui(){
-        loopPanel.clearGui();
-        threadInput.setText("1"); // $NON-NLS-1$
+    private fun initGui() {
+        loopPanel.clearGui()
+        threadInput.text = "1" // $NON-NLS-1$
+    }
+
+    companion object {
+        private const val THREAD_NAME = "Thread Field"
     }
 }
