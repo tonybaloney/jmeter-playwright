@@ -1,4 +1,4 @@
-package com.microsoft.playwright.jmeter
+package com.microsoft.playwright.jmeter.threadgroup
 
 import org.apache.jmeter.control.LoopController
 import org.apache.jmeter.control.gui.LoopControlPanel

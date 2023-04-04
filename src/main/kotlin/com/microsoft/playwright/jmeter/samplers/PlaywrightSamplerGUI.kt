@@ -1,4 +1,4 @@
-package com.microsoft.playwright.jmeter
+package com.microsoft.playwright.jmeter.samplers
 
 import com.microsoft.playwright.options.WaitUntilState
 import org.apache.jmeter.gui.util.VerticalPanel
@@ -11,13 +11,14 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
     private val urlTextField = JTextField("https://playwright.dev")
     private val refererTextField = JTextField()
     private val timeoutField = JSpinner()
-    private val waitUntilComboBox: JComboBox<*> = JComboBox<Any?>(WaitUntilState.values())
+    private val waitUntilComboBox: JComboBox<WaitUntilState> = JComboBox<WaitUntilState>(WaitUntilState.values())
 
     init {
         layout = BorderLayout(0, 5)
         border = makeBorder()
         val box = Box.createVerticalBox()
         box.add(makeTitlePanel())
+        add(box, BorderLayout.NORTH)
         init()
     }
 
@@ -48,6 +49,7 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
         timeOutPanel.add(timeoutLabel, BorderLayout.WEST)
         timeoutField.name = "Playwright.Timeout"
         timeoutLabel.labelFor = timeoutField
+        timeoutField.value = 5000
         timeOutPanel.add(timeoutField, BorderLayout.CENTER)
 
         // referer
@@ -83,20 +85,18 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
     override fun modifyTestElement(element: TestElement) {
         super.configureTestElement(element)
         if (element is PlaywrightSampler) {
-            val sampler = element
-            sampler.url = urlTextField.text
-            sampler.timeout = (timeoutField.value as Int)
-            sampler.waitUntilState = waitUntilStateFromString(waitUntilComboBox.selectedItem.toString())
+            element.url = urlTextField.text
+            element.timeout = (timeoutField.value as Int)
+            element.waitUntilState = waitUntilComboBox.selectedItem as WaitUntilState
         }
     }
 
     override fun configure(element: TestElement) {
         super.configure(element)
         if (element is PlaywrightSampler) {
-            val sampler = element
-            urlTextField.text = sampler.url
-            timeoutField.value = sampler.timeout
-            waitUntilComboBox.selectedItem = waitUntilStateToString(sampler.waitUntilState)
+            urlTextField.text = element.url
+            timeoutField.value = element.timeout
+            waitUntilComboBox.selectedItem = element.waitUntilState
         }
     }
 }

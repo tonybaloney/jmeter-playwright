@@ -1,5 +1,7 @@
 package com.microsoft.playwright.jmeter
 
+import com.microsoft.playwright.jmeter.threadgroup.BrowserType
+import com.microsoft.playwright.jmeter.threadgroup.PlaywrightBrowserThreadGroup
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
