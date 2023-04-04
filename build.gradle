@@ -31,6 +31,11 @@ jar {
         configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
     }
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    // Comment any of the below to get smaller JAR files.
+//    exclude ('**/driver/linux-arm64/**')
+//    exclude ('**/driver/win32_x64/**')
+//    exclude ('**/driver/mac/**')
+//    exclude ('**/driver/linux/**')
 }
 
 java {

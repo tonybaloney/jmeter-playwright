@@ -1,15 +1,18 @@
 package com.microsoft.playwright.jmeter.assertions
 
 import com.microsoft.playwright.Locator
+import com.microsoft.playwright.Page
 import com.microsoft.playwright.jmeter.PlaywrightSampleResult
 import com.microsoft.playwright.jmeter.assertions.AssertionType.*
 import com.microsoft.playwright.jmeter.processors.SelectorType
+import com.microsoft.playwright.jmeter.processors.select
 import org.apache.jmeter.assertions.Assertion
 import org.apache.jmeter.assertions.AssertionResult
 import org.apache.jmeter.samplers.SampleResult
 import org.apache.jmeter.testelement.AbstractTestElement
 import org.apache.jmeter.threads.ThreadGroup
 import org.slf4j.LoggerFactory
+import java.nio.file.Paths
 
 enum class AssertionType {
     IsChecked,
@@ -28,10 +31,16 @@ class PlaywrightAssertion : Assertion, AbstractTestElement() {
         set(label) {
             setProperty(SELECTOR_TYPE, label.toString())
         }
-    var selectorInput: String?
+    var selectorInput: String
         get() = getPropertyAsString(SELECTOR, "")
         set(label) {
             setProperty(SELECTOR, label)
+        }
+
+    var takeScreenshotOnFailure: Boolean
+        get() = getPropertyAsBoolean(SCREENSHOT_FAILURES, false)
+        set(v){
+            setProperty(SCREENSHOT_FAILURES, v)
         }
 
     var assertionType: AssertionType
@@ -40,7 +49,7 @@ class PlaywrightAssertion : Assertion, AbstractTestElement() {
             setProperty(ASSERTION_TYPE, label.toString())
         }
     override fun getResult(response: SampleResult?): AssertionResult {
-        val result = AssertionResult("Playwright Assertion")
+        val result = AssertionResult(this.name)
         if (response is PlaywrightSampleResult){
             if (response.page == null){
                 result.isFailure = true
@@ -50,33 +59,23 @@ class PlaywrightAssertion : Assertion, AbstractTestElement() {
             } else {
                 result.isFailure = false
                 // Assert
-                val locator: Locator? = when (selectorType) {
-                    SelectorType.Title -> {
-                        response.page?.getByTitle(selectorInput)
-                    }
-
-                    SelectorType.XPath -> {
-                        response.page?.locator(selectorInput)
-                    }
-
-                    SelectorType.Text -> {
-                        response.page?.getByText(selectorInput)
-                    }
-                }
+                val locator: Locator = select(selectorType, response.page!!, selectorInput)
                 val assertionResult = when(assertionType) {
-                    IsChecked -> locator?.isChecked
-                    IsDisabled -> locator?.isDisabled
-                    IsEditable -> locator?.isEditable
-                    IsEnabled -> locator?.isEnabled
-                    IsHidden -> locator?.isHidden
-                    IsVisible -> locator?.isVisible
+                    IsChecked -> locator.isChecked
+                    IsDisabled -> locator.isDisabled
+                    IsEditable -> locator.isEditable
+                    IsEnabled -> locator.isEnabled
+                    IsHidden -> locator.isHidden
+                    IsVisible -> locator.isVisible
                 }
                 result.isFailure = assertionResult != true
-                if (!result.isFailure){
-                    result.failureMessage = "Assertion failed"
-                    log.info("Assertion failed")
-                } else {
-                    log.info("Assertion successful")
+                if (result.isFailure){
+                    result.failureMessage = "Assertion $name failed with condition $assertionType"
+                    if (takeScreenshotOnFailure) {
+                        val screenshotPath = Paths.get("screenshot-${name}-assertion-failure.png")
+                        response.page?.screenshot(Page.ScreenshotOptions().setPath(screenshotPath))
+                        log.info("Saved screenshot to ${screenshotPath.toAbsolutePath()}")
+                    }
                 }
             }
 
@@ -93,5 +92,6 @@ class PlaywrightAssertion : Assertion, AbstractTestElement() {
         private const val SELECTOR = "Playwright.selector"
         private const val SELECTOR_TYPE = "Playwright.selectorType"
         private const val ASSERTION_TYPE = "Playwright.assertionType"
+        private const val SCREENSHOT_FAILURES = "Playwright.screenshotFailures"
     }
 }

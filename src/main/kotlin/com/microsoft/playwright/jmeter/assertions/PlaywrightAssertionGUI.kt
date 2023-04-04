@@ -10,6 +10,7 @@ class PlaywrightAssertionGUI : AbstractAssertionGui() {
     private val selectorComboBox: JComboBox<SelectorType> = JComboBox<SelectorType>(SelectorType.values())
     private val selectorValueInputBox: JTextField = JTextField()
     private val assertionTypeComboBox: JComboBox<AssertionType> = JComboBox<AssertionType>(AssertionType.values())
+    private val takeScreenshotOptionBox: JCheckBox = JCheckBox()
     override fun getLabelResource(): String {
         return "Playwright Assertion"
     }
@@ -17,7 +18,6 @@ class PlaywrightAssertionGUI : AbstractAssertionGui() {
     override fun getStaticLabel(): String {
         return labelResource
     }
-
 
     init {
         init()
@@ -53,6 +53,14 @@ class PlaywrightAssertionGUI : AbstractAssertionGui() {
         assertionLabel.labelFor = assertionTypeComboBox
         assertionPanel.add(assertionTypeComboBox, BorderLayout.CENTER)
 
+        // assertion
+        val screenshotPanel = JPanel(BorderLayout(5, 0))
+        val screenshotLabel = JLabel("Screenshot on Failure")
+        screenshotPanel.add(screenshotLabel, BorderLayout.WEST)
+        takeScreenshotOptionBox.name = "Playwright.screenshotFailure"
+        screenshotLabel.labelFor = takeScreenshotOptionBox
+        screenshotPanel.add(takeScreenshotOptionBox, BorderLayout.CENTER)
+
         box.add(selectorPanel)
         box.add(selectorValuePanel)
         box.add(assertionPanel)
@@ -72,6 +80,7 @@ class PlaywrightAssertionGUI : AbstractAssertionGui() {
             element.selectorInput = selectorValueInputBox.text
             element.selectorType = selectorComboBox.selectedItem as SelectorType
             element.assertionType = assertionTypeComboBox.selectedItem as AssertionType
+            element.takeScreenshotOnFailure = takeScreenshotOptionBox.isSelected
         }
     }
 
@@ -81,6 +90,7 @@ class PlaywrightAssertionGUI : AbstractAssertionGui() {
             selectorValueInputBox.text = element.selectorInput
             selectorComboBox.selectedItem = element.selectorType
             assertionTypeComboBox.selectedItem = element.assertionType
+            takeScreenshotOptionBox.isSelected = element.takeScreenshotOnFailure
         }
     }
 
