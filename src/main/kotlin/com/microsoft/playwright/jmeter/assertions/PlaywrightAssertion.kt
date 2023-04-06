@@ -4,8 +4,8 @@ import com.microsoft.playwright.Locator
 import com.microsoft.playwright.Page
 import com.microsoft.playwright.jmeter.PlaywrightSampleResult
 import com.microsoft.playwright.jmeter.assertions.AssertionType.*
-import com.microsoft.playwright.jmeter.processors.SelectorType
-import com.microsoft.playwright.jmeter.processors.select
+import com.microsoft.playwright.jmeter.SelectorType
+import com.microsoft.playwright.jmeter.selectAsLocator
 import org.apache.jmeter.assertions.Assertion
 import org.apache.jmeter.assertions.AssertionResult
 import org.apache.jmeter.samplers.SampleResult
@@ -59,7 +59,7 @@ class PlaywrightAssertion : Assertion, AbstractTestElement() {
             } else {
                 result.isFailure = false
                 // Assert
-                val locator: Locator = select(selectorType, response.page!!, selectorInput)
+                val locator: Locator = selectAsLocator(selectorType, response.page!!, selectorInput)
                 val assertionResult = when(assertionType) {
                     IsChecked -> locator.isChecked
                     IsDisabled -> locator.isDisabled

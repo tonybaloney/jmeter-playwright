@@ -1,31 +1,8 @@
 package com.microsoft.playwright.jmeter.processors
 
-import com.microsoft.playwright.Locator
-import com.microsoft.playwright.Page
+import com.microsoft.playwright.jmeter.SelectorType
 import org.apache.jmeter.processor.PostProcessor
 import org.apache.jmeter.testelement.AbstractTestElement
-
-enum class SelectorType {
-    Title,
-    XPath,
-    Text;
-}
-
-fun select(selector: SelectorType, page: Page, input: String): Locator {
-    return when (selector) {
-        SelectorType.Title -> {
-            page.getByTitle(input)
-        }
-
-        SelectorType.XPath -> {
-            page.locator(input)
-        }
-
-        SelectorType.Text -> {
-            page.getByText(input)
-        }
-    }
-}
 
 abstract class AbstractSelectableProcessor: PostProcessor, AbstractTestElement() {
     var selectorType: SelectorType

@@ -1,6 +1,7 @@
 package com.microsoft.playwright.jmeter.processors
 
 import com.microsoft.playwright.jmeter.PlaywrightSampleResult
+import com.microsoft.playwright.jmeter.selectAsLocator
 import org.apache.jmeter.threads.ThreadGroup
 import org.slf4j.LoggerFactory
 
@@ -17,7 +18,7 @@ class PlaywrightFillPostProcessor: AbstractSelectableProcessor() {
         if (this.threadContext.previousResult is PlaywrightSampleResult) {
             val result = this.threadContext.previousResult as PlaywrightSampleResult
             if (result.page != null) {
-                select(selectorType, result.page!!, selectorInput).fill(fillInput)
+                selectAsLocator(selectorType, result.page!!, selectorInput).fill(fillInput)
                 log.info("Filled element $selectorInput ($selectorType) with value $fillInput.")
             }
         } else {
