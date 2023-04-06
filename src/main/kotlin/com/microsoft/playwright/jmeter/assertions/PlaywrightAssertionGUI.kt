@@ -1,6 +1,6 @@
 package com.microsoft.playwright.jmeter.assertions
 
-import com.microsoft.playwright.jmeter.processors.SelectorType
+import com.microsoft.playwright.jmeter.SelectorType
 import org.apache.jmeter.assertions.gui.AbstractAssertionGui
 import org.apache.jmeter.testelement.TestElement
 import java.awt.BorderLayout

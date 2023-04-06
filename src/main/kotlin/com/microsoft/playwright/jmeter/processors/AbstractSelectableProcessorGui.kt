@@ -1,5 +1,6 @@
 package com.microsoft.playwright.jmeter.processors
 
+import com.microsoft.playwright.jmeter.SelectorType
 import org.apache.jmeter.processor.gui.AbstractPostProcessorGui
 import org.apache.jmeter.testelement.TestElement
 import java.awt.BorderLayout

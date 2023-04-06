@@ -1,6 +1,6 @@
 package com.microsoft.playwright.jmeter.assertions
 
-import com.microsoft.playwright.jmeter.processors.SelectorType
+import com.microsoft.playwright.jmeter.SelectorType
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
