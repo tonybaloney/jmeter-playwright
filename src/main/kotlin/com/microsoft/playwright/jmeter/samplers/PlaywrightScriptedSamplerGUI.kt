@@ -10,6 +10,7 @@ import javax.swing.*
 class PlaywrightScriptedSamplerGUI : AbstractSamplerGui() {
     private val nameTextField = JTextField("")
     private val codeTextArea = JSyntaxTextArea.getInstance(40, 120)
+    private val captureConsoleLogs = JCheckBox()
 
     init {
         layout = BorderLayout(0, 5)
@@ -33,6 +34,14 @@ class PlaywrightScriptedSamplerGUI : AbstractSamplerGui() {
         nameTextField.text = "testpackage.Example"
         nameLabel.labelFor = nameTextField
         namePanel.add(nameTextField, BorderLayout.CENTER)
+
+        // capture logs
+        val capturePanel = JPanel(BorderLayout(5, 0))
+        val captureLabel = JLabel("Capture Console Logs")
+        capturePanel.add(captureLabel, BorderLayout.WEST)
+        captureConsoleLogs.name = "Playwright.captureConsoleLogs"
+        captureLabel.labelFor = captureConsoleLogs
+        capturePanel.add(captureConsoleLogs, BorderLayout.CENTER)
 
         // code..
         val codePanel = JPanel(BorderLayout(5, 0))
@@ -62,6 +71,7 @@ class PlaywrightScriptedSamplerGUI : AbstractSamplerGui() {
 
         propsPanel.add(namePanel)
         propsPanel.add(codePanel)
+        propsPanel.add(capturePanel)
 
         val integrationPanel = VerticalPanel()
         integrationPanel.add(propsPanel)
@@ -87,6 +97,7 @@ class PlaywrightScriptedSamplerGUI : AbstractSamplerGui() {
         if (element is PlaywrightScriptedSampler) {
             element.className = nameTextField.text
             element.code = codeTextArea.text
+            element.captureConsoleLogs = captureConsoleLogs.isSelected
         }
     }
 
@@ -95,6 +106,7 @@ class PlaywrightScriptedSamplerGUI : AbstractSamplerGui() {
         if (element is PlaywrightScriptedSampler) {
             nameTextField.text = element.className
             codeTextArea.text = element.code
+            captureConsoleLogs.isSelected = element.captureConsoleLogs
         }
     }
 }

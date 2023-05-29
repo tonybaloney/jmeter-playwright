@@ -17,6 +17,7 @@ class JavaStringCompiler {
         val writer = PrintWriter(out)
         try {
             var aClass: Class<*>
+            // TODO: Store a hashmap of the compiled classes to detect if it exists in the classloader but the data has changed.
             synchronized(compilerLock) {
                 try {
                     aClass = javaClass.classLoader.loadClass(className)

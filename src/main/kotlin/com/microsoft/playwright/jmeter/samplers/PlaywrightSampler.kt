@@ -40,6 +40,11 @@ class PlaywrightSampler : AbstractSampler() {
             setProperty(REFERER, label)
         }
 
+    var captureConsoleLogs: Boolean
+        get() = getPropertyAsBoolean(CAPTURE_CONSOLE_LOGS, false)
+        set(value) {
+            setProperty(CAPTURE_CONSOLE_LOGS, value)
+        }
 
     override fun sample(entry: Entry?): SampleResult {
         val result = PlaywrightSampleResult()
@@ -63,12 +68,19 @@ class PlaywrightSampler : AbstractSampler() {
             } else {
                 val page: Page = browser.newPage()
                 try {
+                    page.onLoad { it: Page ->
+                        result.title = page.title()
+                        if (captureConsoleLogs) {
+                            it.onConsoleMessage {
+                                log.info("Console message from ${it.location()} - ${it.text()}")
+                            }
+                        }
+                    }
                     val response = page.navigate(url, options)
                     result.page = page
                     result.isSuccessful = response.ok()
                     result.responseCode = response.status().toString()
                     result.responseHeaders = response.headersArray().joinToString("\n") { "${it.name}:${it.value}" }
-                    result.title = page.title()
                 } catch (_: TimeoutError) {
                     result.isSuccessful = false
                     result.errorCount += 1
@@ -89,5 +101,6 @@ class PlaywrightSampler : AbstractSampler() {
         private const val TIMEOUT = "Playwright.timeout"
         private const val WAITUNTILSTATE = "Playwright.waitUntilState"
         private const val REFERER = "Playwright.referer"
+        private const val CAPTURE_CONSOLE_LOGS = "Playwright.captureConsoleLogs"
     }
 }

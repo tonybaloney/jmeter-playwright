@@ -10,6 +10,7 @@ import org.apache.jmeter.samplers.AbstractSampler
 import org.apache.jmeter.samplers.Entry
 import org.apache.jmeter.samplers.SampleResult
 import org.apache.jmeter.threads.ThreadGroup
+import org.opentest4j.AssertionFailedError
 import org.slf4j.LoggerFactory
 
 class PlaywrightScriptedSampler : AbstractSampler() {
@@ -17,18 +18,24 @@ class PlaywrightScriptedSampler : AbstractSampler() {
 
     var code: String
         get() = getPropertyAsString(CODE, "")
-        set(label) {
-            setProperty(CODE, label)
+        set(value) {
+            setProperty(CODE, value)
         }
 
     var className: String
         get() = getPropertyAsString(CLASSNAME, "")
-        set(label) {
-            setProperty(CLASSNAME, label)
+        set(value) {
+            setProperty(CLASSNAME, value)
         }
 
-    var compiler = JavaStringCompiler()
-    var compiledSampler: RunnableJMeterSampler? = null
+    var captureConsoleLogs: Boolean
+        get() = getPropertyAsBoolean(CAPTURE_CONSOLE_LOGS, false)
+        set(value) {
+            setProperty(CAPTURE_CONSOLE_LOGS, value)
+        }
+
+    private var compiler = JavaStringCompiler()
+    private var compiledSampler: RunnableJMeterSampler? = null
 
     override fun sample(entry: Entry?): SampleResult {
         if (this.threadContext.threadGroup is PlaywrightBrowserThreadGroup){
@@ -40,6 +47,11 @@ class PlaywrightScriptedSampler : AbstractSampler() {
                 sampleResult.page = it
                 it.onLoad {
                     sampleResult.title = it.title()
+                }
+                if (captureConsoleLogs) {
+                    it.onConsoleMessage {
+                        log.info("Console message from ${it.location()} - ${it.text()}")
+                    }
                 }
             }
             browser?.onPage(pageHandler)
@@ -54,7 +66,6 @@ class PlaywrightScriptedSampler : AbstractSampler() {
             }
             browser?.onResponse(responseHandler)
 
-
             if (compiledSampler == null) {
                 log.info("Compiling $className into scripted Playwright file")
                 compiledSampler = compiler.compile(className, code)
@@ -64,6 +75,10 @@ class PlaywrightScriptedSampler : AbstractSampler() {
                 compiledSampler?.run(browser)
                 sampleResult.isSuccessful = true
                 sampleResult.responseMessage = "Sampled scripted file $className"
+            } catch (a: AssertionFailedError){
+                sampleResult.isSuccessful = false
+                sampleResult.errorCount += 1
+                sampleResult.responseMessage += a.message
             } catch (e: Exception) {
                 sampleResult.isSuccessful = false
                 sampleResult.errorCount += 1
@@ -73,7 +88,6 @@ class PlaywrightScriptedSampler : AbstractSampler() {
             }
             browser?.offPage(pageHandler)
             browser?.offResponse(responseHandler)
-
             return sampleResult
         } else {
             val result = PlaywrightSampleResult()
@@ -86,5 +100,6 @@ class PlaywrightScriptedSampler : AbstractSampler() {
     companion object {
         private const val CLASSNAME = "Playwright.classname"
         private const val CODE = "Playwright.code"
+        private const val CAPTURE_CONSOLE_LOGS = "Playwright.captureConsoleLogs"
     }
 }

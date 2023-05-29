@@ -12,6 +12,7 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
     private val refererTextField = JTextField()
     private val timeoutField = JSpinner()
     private val waitUntilComboBox: JComboBox<WaitUntilState> = JComboBox<WaitUntilState>(WaitUntilState.values())
+    private val captureConsoleLogs = JCheckBox()
 
     init {
         layout = BorderLayout(0, 5)
@@ -59,10 +60,20 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
         refererTextField.name = "Playwright.Referer"
         refererLabel.labelFor = refererTextField
         refererPanel.add(refererTextField, BorderLayout.CENTER)
+
+        // capture logs
+        val capturePanel = JPanel(BorderLayout(5, 0))
+        val captureLabel = JLabel("Capture Console Logs")
+        capturePanel.add(captureLabel, BorderLayout.WEST)
+        captureConsoleLogs.name = "Playwright.captureConsoleLogs"
+        captureLabel.labelFor = captureConsoleLogs
+        capturePanel.add(captureConsoleLogs, BorderLayout.CENTER)
+
         propsPanel.add(urlPanel)
         propsPanel.add(waitUntilPanel)
         propsPanel.add(timeOutPanel)
         propsPanel.add(refererPanel)
+        propsPanel.add(capturePanel)
         val integrationPanel = VerticalPanel()
         integrationPanel.add(propsPanel)
         add(integrationPanel, BorderLayout.CENTER)
@@ -88,6 +99,8 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
             element.url = urlTextField.text
             element.timeout = (timeoutField.value as Int)
             element.waitUntilState = waitUntilComboBox.selectedItem as WaitUntilState
+            element.referer = refererTextField.text
+            element.captureConsoleLogs = captureConsoleLogs.isSelected
         }
     }
 
@@ -97,6 +110,8 @@ class PlaywrightSamplerGUI : AbstractSamplerGui() {
             urlTextField.text = element.url
             timeoutField.value = element.timeout
             waitUntilComboBox.selectedItem = element.waitUntilState
+            refererTextField.text = element.referer
+            captureConsoleLogs.isSelected = element.captureConsoleLogs
         }
     }
 }
