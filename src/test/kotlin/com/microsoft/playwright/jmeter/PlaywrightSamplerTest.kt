@@ -1,16 +1,8 @@
 package com.microsoft.playwright.jmeter
 
 import com.microsoft.playwright.jmeter.samplers.PlaywrightSampler
-import com.microsoft.playwright.jmeter.threadgroup.BrowserType
-import com.microsoft.playwright.jmeter.threadgroup.PlaywrightBrowserThreadGroup
-import org.apache.jmeter.control.LoopController
-import org.apache.jmeter.threads.JMeterThread
-import org.apache.jorphan.collections.HashTree
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 class PlaywrightSamplerTest {
     @Test

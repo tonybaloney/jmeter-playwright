@@ -2,9 +2,8 @@ package com.microsoft.playwright.jmeter
 
 import com.microsoft.playwright.jmeter.samplers.PlaywrightSampler
 import com.microsoft.playwright.jmeter.samplers.PlaywrightSamplerGUI
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 
 internal class PlaywrightSamplerGUITest {
