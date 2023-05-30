@@ -1,16 +1,17 @@
 package com.microsoft.playwright.jmeter.compiler
 
 import net.openhft.compiler.CachedCompiler
+import org.apache.jmeter.DynamicClassLoader
 import org.apache.jmeter.threads.ThreadGroup
 import org.slf4j.LoggerFactory
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.util.concurrent.locks.ReentrantLock
-
 private val log = LoggerFactory.getLogger(ThreadGroup::class.java)
 private val compilerLock = ReentrantLock()
+
 class JavaStringCompiler {
-    private val CACHED_COMPILER = CachedCompiler(null, null, listOf("-g", "--add-opens", "java.base/java.lang=ALL-UNNAMED"))
+    private val cachedCompiler = CachedCompiler(null, null, listOf("-g", "--add-opens", "java.base/java.lang=ALL-UNNAMED"))
 
     fun compile(className: String, code: String): RunnableJMeterSampler {
         val out = StringWriter()
@@ -22,7 +23,7 @@ class JavaStringCompiler {
                 try {
                     aClass = javaClass.classLoader.loadClass(className)
                 } catch (e: ClassNotFoundException) {
-                    aClass = CACHED_COMPILER.loadFromJava(javaClass.classLoader, className, code, writer)
+                    aClass = cachedCompiler.loadFromJava(javaClass.classLoader, className, code, writer)
                     log.info("Compiled ${aClass.classes}")
                 }
             }

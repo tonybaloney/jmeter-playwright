@@ -7,8 +7,8 @@ import java.awt.BorderLayout
 import javax.swing.*
 
 abstract class AbstractSelectableProcessorGui: AbstractPostProcessorGui() {
-    internal val selectorComboBox: JComboBox<SelectorType> = JComboBox<SelectorType>(SelectorType.values())
-    internal val selectorValueInputBox: JTextField = JTextField()
+    private val selectorComboBox: JComboBox<SelectorType> = JComboBox<SelectorType>(SelectorType.values())
+    private val selectorValueInputBox: JTextField = JTextField()
 
     override fun getStaticLabel(): String {
         return labelResource

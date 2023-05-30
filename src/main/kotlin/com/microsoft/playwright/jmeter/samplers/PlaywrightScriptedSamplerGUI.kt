@@ -7,6 +7,7 @@ import org.apache.jmeter.testelement.TestElement
 import java.awt.BorderLayout
 import javax.swing.*
 
+@Suppress("unused")
 class PlaywrightScriptedSamplerGUI : AbstractSamplerGui() {
     private val nameTextField = JTextField("")
     private val codeTextArea = JSyntaxTextArea.getInstance(40, 120)

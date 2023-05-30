@@ -93,8 +93,4 @@ class PlaywrightAssertionGUI : AbstractAssertionGui() {
             takeScreenshotOptionBox.isSelected = element.takeScreenshotOnFailure
         }
     }
-
-    override fun clearGui() {
-        super.clearGui()
-    }
 }

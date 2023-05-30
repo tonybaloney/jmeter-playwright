@@ -71,6 +71,7 @@ class PlaywrightBrowserThreadGroup : ThreadGroup() {
             return browserInstances[threadNum]?.contexts()?.get(0)
         } else {
             log.info("Spawning Playwright instance in thread ${threadNum}.")
+
             val playwright = Playwright.create()
             playwrightInstances[threadNum] = playwright
 
