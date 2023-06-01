@@ -22,8 +22,8 @@ dependencies {
     implementation group: 'org.apache.jmeter', name: 'ApacheJMeter_core', version: '5.1'
     extraLibs group: 'com.microsoft.playwright', name: 'playwright', version: '1.32.0'
     extraLibs 'net.openhft:compiler:2.23ea0'
-    extraLibs 'com.fasterxml.jackson.module:jackson-module-kotlin:2.15.1'
-    extraLibs 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.1'
+    extraLibs 'com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3'
+    extraLibs 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.1.0"
