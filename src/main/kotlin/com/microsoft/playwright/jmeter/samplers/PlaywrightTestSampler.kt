@@ -1,7 +1,7 @@
 package com.microsoft.playwright.jmeter.samplers
 
 import com.microsoft.playwright.jmeter.junit.JUnitDeserializer
-import com.microsoft.playwright.jmeter.threadgroup.BrowserType
+import com.microsoft.playwright.jmeter.BrowserType
 import org.apache.jmeter.samplers.AbstractSampler
 import org.apache.jmeter.samplers.Entry
 import org.apache.jmeter.samplers.SampleResult
@@ -64,10 +64,11 @@ class PlaywrightTestSampler : AbstractSampler() {
     private fun runNpxPlaywrightTest(workingDir: File) {
         try {
             val parts = arrayListOf("npx", "playwright", "test", "--reporter", "junit")
-            log.info("Launching process ${parts}.")
+            log.info("Launching process $parts in directory ${workingDir}.")
             this.proc = Runtime.getRuntime().exec(parts.joinToString(" ") , null, workingDir)
         } catch(e: IOException) {
-            e.printStackTrace()
+            log.error(e.message)
+            log.error(e.stackTraceToString())
         }
     }
 

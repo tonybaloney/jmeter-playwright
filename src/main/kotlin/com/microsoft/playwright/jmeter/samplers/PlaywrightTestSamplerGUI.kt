@@ -1,6 +1,6 @@
 package com.microsoft.playwright.jmeter.samplers
 
-import com.microsoft.playwright.jmeter.threadgroup.BrowserType
+import com.microsoft.playwright.jmeter.BrowserType
 import org.apache.jmeter.gui.util.VerticalPanel
 import org.apache.jmeter.samplers.gui.AbstractSamplerGui
 import org.apache.jmeter.testelement.TestElement

@@ -2,7 +2,9 @@ package com.microsoft.playwright.jmeter.junit
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 data class property (
@@ -22,6 +24,8 @@ data class testcase (
     var skipped: Int = 0
     @JsonProperty("error")
     var error: List<Error> = emptyList()
+
+    @JacksonXmlElementWrapper(useWrapping = false)
     @JsonProperty("failure")
     var failure: List<failure> = emptyList()
     @JsonProperty("system-out")
@@ -36,6 +40,7 @@ data class testcase (
     var classname: String = ""
     @JsonProperty("status")
     var status: String = ""
+    var properties: properties? = null
 }
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -87,7 +92,9 @@ data class error (
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 data class failure (
-    var content: String = "",
-    var type: String = "",
-    var message: String = ""
-)
+        @JsonProperty("type")var type: String = "",
+        @JsonProperty("message")var message: String = "" ) {
+    @JacksonXmlCData
+    @JacksonXmlText
+    var content: String = ""
+}
