@@ -11,7 +11,7 @@ class PlaywrightTestSampleResult(var testsuites: testsuites, startedAt: Long, fi
     init {
         startTime = startedAt
         endTime = finishedAt
-        isSuccessful = testsuites.errors == 0
+        isSuccessful = testsuites.errors == 0 && testsuites.failures == 0
     }
 
     override fun toString(): String {
@@ -21,11 +21,15 @@ class PlaywrightTestSampleResult(var testsuites: testsuites, startedAt: Long, fi
     override fun getTime(): Long {
         return (testsuites.time.toDouble() * 1000).roundToLong()
     }
+
+    override fun getErrorCount(): Int {
+        return testsuites.errors
+    }
 }
 class PlaywrightTestCaseSampleResult(var testcase: testcase, testsuite: testsuite) : SampleResult() {
     init {
         startTime = ZonedDateTime.parse(testsuite.timestamp).toInstant().toEpochMilli()
-        isSuccessful = testcase.error.isEmpty()
+        isSuccessful = testcase.error.isEmpty() && testcase.failure.isEmpty()
     }
     override fun toString(): String {
         return testcase.name
@@ -34,12 +38,17 @@ class PlaywrightTestCaseSampleResult(var testcase: testcase, testsuite: testsuit
     override fun getTime(): Long {
         return (testcase.time.toDouble() * 1000).roundToLong()
     }
+
+    override fun getResponseMessage(): String {
+        if (testcase.failure.isEmpty()) return ""
+        return testcase.failure.first().content
+    }
 }
 
 class PlaywrightTestSuiteSampleResult(var testsuite: testsuite) : SampleResult() {
     init {
         startTime = ZonedDateTime.parse(testsuite.timestamp).toInstant().toEpochMilli()
-        isSuccessful = testsuite.errors == 0
+        isSuccessful = testsuite.errors == 0 && testsuite.failures == 0
     }
     override fun toString(): String {
         return testsuite.name
