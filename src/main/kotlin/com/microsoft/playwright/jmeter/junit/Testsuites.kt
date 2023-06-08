@@ -28,18 +28,27 @@ data class testcase (
     @JacksonXmlElementWrapper(useWrapping = false)
     @JsonProperty("failure")
     var failure: List<failure> = emptyList()
+
+    @JacksonXmlElementWrapper(useWrapping = false)
     @JsonProperty("system-out")
-    var systemOut: List<String> = emptyList()
+    var systemOut: List<systemOut> = emptyList()
+
+    @JacksonXmlElementWrapper(useWrapping = false)
     @JsonProperty("system-err")
-    var systemErr: List<String> = emptyList()
+    var systemErr: List<systemOut> = emptyList()
+
     @JsonProperty("assertions")
     var assertions: String = ""
+
     @JsonProperty("time")
     var time: String = ""
+
     @JsonProperty("classname")
     var classname: String = ""
+
     @JsonProperty("status")
     var status: String = ""
+
     var properties: properties? = null
 }
 
@@ -97,4 +106,11 @@ data class failure (
     @JacksonXmlCData
     @JacksonXmlText
     var content: String = ""
+}
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class systemOut (@JacksonXmlCData
+                      @JacksonXmlText
+                      var content: String = "") {
+
 }

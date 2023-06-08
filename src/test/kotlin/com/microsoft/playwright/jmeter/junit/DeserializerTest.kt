@@ -1,7 +1,6 @@
 package com.microsoft.playwright.jmeter.junit
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class DeserializerTest {
@@ -72,5 +71,6 @@ class DeserializerTest {
         assertEquals(testsuites.failures, 26)
         assertEquals(testsuites.skipped, 11)
         assertEquals(testsuites.disabled, 0)
+        assertTrue(testsuites.testsuite[2].testcase[0].systemOut[0].content.contains("test-failed-1.png"))
     }
 }
