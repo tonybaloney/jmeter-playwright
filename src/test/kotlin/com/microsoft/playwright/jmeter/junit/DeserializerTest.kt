@@ -62,4 +62,15 @@ class DeserializerTest {
         assertEquals(testsuites.testsuite[0].tests, 1)
         assertEquals(testsuites.testsuite[0].testcase[0].name, "Shopping Cart API › should be able to GET shopping cart")
     }
+    @Test
+    fun `test mixed results report`(){
+        val testReport = this::class.java.classLoader.getResource("results_mixed.xml")?.readText()
+        assertNotNull(testReport)
+        val testsuites = JUnitDeserializer().deserialize(testReport!!)
+
+        assertEquals(testsuites.tests, 68)
+        assertEquals(testsuites.failures, 26)
+        assertEquals(testsuites.skipped, 11)
+        assertEquals(testsuites.disabled, 0)
+    }
 }
