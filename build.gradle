@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.microsoft.playwright.jmeter'
-version '0.4.0-TEST'
+version '0.4.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -20,7 +20,6 @@ dependencies {
     // https://mvnrepository.com/artifact/com.microsoft.playwright/playwright
     // TODO : Update once https://github.com/apache/jmeter/issues/5322 is fixed, scheduled in 5.6
     implementation group: 'org.apache.jmeter', name: 'ApacheJMeter_core', version: '5.1'
-    implementation group: 'com.microsoft.playwright', name: 'playwright', version: '1.32.0'
     extraLibs 'com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3'
     extraLibs 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
