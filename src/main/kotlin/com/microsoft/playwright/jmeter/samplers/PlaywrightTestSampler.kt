@@ -15,12 +15,6 @@ class PlaywrightTestSampler : AbstractSampler() {
     private var proc: Process? = null
     private val log = LoggerFactory.getLogger(ThreadGroup::class.java)
 
-    var browserType: BrowserType
-        get() = BrowserType.valueOf(getPropertyAsString(BROWSER, "Chromium"))
-        set(value) {
-            setProperty(BROWSER, value.toString())
-        }
-
     var testDirectory: File
         get() = File(getPropertyAsString(TEST_DIRECTORY, ""))
         set(value) {
@@ -113,8 +107,6 @@ class PlaywrightTestSampler : AbstractSampler() {
         try {
             val parts = arrayListOf("npx", "playwright", "test", "--reporter", "junit")
 
-            parts.add("--browser=" + browserType.toString().lowercase())
-
             if (workerCount != 0){
                 parts.add("--workers=$workerCount")
             }
@@ -150,7 +142,6 @@ class PlaywrightTestSampler : AbstractSampler() {
     }
 
     companion object {
-        private const val BROWSER = "Playwright.browser"
         private const val TEST_DIRECTORY = "Playwright.testDirectory"
         private const val EXTRA_OPTIONS = "Playwright.extraOptions"
         private const val CONFIG_FILE = "Playwright.configFile"

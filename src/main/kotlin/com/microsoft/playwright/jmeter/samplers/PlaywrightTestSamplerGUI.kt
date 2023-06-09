@@ -9,7 +9,6 @@ import java.awt.BorderLayout
 import javax.swing.*
 
 class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
-    private val browserComboBox: JComboBox<BrowserType> = JComboBox<BrowserType>(BrowserType.values())
     private var testDirectory: JFileChooser = JFileChooser()
     private var configFile: JFileChooser = JFileChooser()
     private var extraOptions: JTextField = JTextField()
@@ -30,14 +29,6 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
     }
 
     private fun init() {
-        // Browser
-        val browserPanel = JPanel(BorderLayout(5, 0))
-        val browserLabel = JLabel("Browser")
-        browserPanel.add(browserLabel, BorderLayout.WEST)
-        browserComboBox.name = "Playwright.Browser"
-        browserLabel.labelFor = browserComboBox
-        browserPanel.add(browserComboBox, BorderLayout.CENTER)
-
         // Test directory
         val testDirectoryPanel = JPanel(BorderLayout(5, 0))
         val testDirectoryLabel = JLabel("Test Directory")
@@ -116,7 +107,6 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         projectPanel.add(project, BorderLayout.CENTER)
 
         val integrationPanel = VerticalPanel()
-        integrationPanel.add(browserPanel)
         integrationPanel.add(testDirectoryPanel)
         integrationPanel.add(configFilePanel)
         integrationPanel.add(workerCountPanel)
@@ -146,7 +136,6 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
     override fun modifyTestElement(element: TestElement) {
         super.configureTestElement(element)
         if (element is PlaywrightTestSampler) {
-            element.browserType = browserComboBox.selectedItem as BrowserType
             element.testDirectory = testDirectory.selectedFile ?: testDirectory.currentDirectory
             element.configFile = configFile.selectedFile ?: testDirectory.selectedFile
             element.workerCount = workerCount.value as Int
@@ -162,7 +151,6 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
     override fun configure(element: TestElement) {
         super.configure(element)
         if (element is PlaywrightTestSampler) {
-            browserComboBox.selectedItem = element.browserType
             testDirectory.selectedFile = element.testDirectory
             configFile.selectedFile = element.configFile
             timeout.value = element.timeout
