@@ -18,6 +18,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
     private var repeatEach: JSpinner = JSpinner()
     private var grep: JTextField = JTextField()
     private var grepInvert: JTextField = JTextField()
+    private var project: JTextField = JTextField()
 
     init {
         layout = BorderLayout(0, 5)
@@ -49,7 +50,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // Config path
         val configFilePanel = JPanel(BorderLayout(5, 0))
-        val configFileLabel = JLabel("Playwright Config")
+        val configFileLabel = JLabel("Playwright Config (optional)")
         configFilePanel.add(testDirectoryLabel, BorderLayout.WEST)
         configFile.name = "Playwright.configFile"
         configFileLabel.labelFor = configFile
@@ -60,7 +61,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // Test directory
         val extraOptionsPanel = JPanel(BorderLayout(5, 0))
-        val extraOptionsLabel = JLabel("Extra CLI Options")
+        val extraOptionsLabel = JLabel("Extra CLI Options (optional)")
         extraOptionsPanel.add(extraOptionsLabel, BorderLayout.WEST)
         extraOptions.name = "Playwright.extraOptions"
         extraOptionsLabel.labelFor = extraOptions
@@ -68,7 +69,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // timeut
         val timeoutPanel = JPanel(BorderLayout(5, 0))
-        val timeoutLabel = JLabel("Timeout")
+        val timeoutLabel = JLabel("Timeout (optional)")
         timeoutPanel.add(timeoutLabel, BorderLayout.WEST)
         timeout.name = "Playwright.timeout"
         timeoutLabel.labelFor = timeout
@@ -76,7 +77,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // worker count
         val workerCountPanel = JPanel(BorderLayout(5, 0))
-        val workerCountLabel = JLabel("Worker Count")
+        val workerCountLabel = JLabel("Worker Count (optional)")
         workerCountPanel.add(workerCountLabel, BorderLayout.WEST)
         workerCount.name = "Playwright.workerCount"
         workerCountLabel.labelFor = workerCount
@@ -84,7 +85,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // repeat each
         val repeatEachPanel = JPanel(BorderLayout(5, 0))
-        val repeatEachLabel = JLabel("Repeat Each Test")
+        val repeatEachLabel = JLabel("Repeat Each Test (optional)")
         repeatEachPanel.add(repeatEachLabel, BorderLayout.WEST)
         repeatEach.name = "Playwright.repeatEach"
         repeatEachLabel.labelFor = repeatEach
@@ -92,7 +93,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // grep
         val grepPanel = JPanel(BorderLayout(5, 0))
-        val grepLabel = JLabel("Test Filter")
+        val grepLabel = JLabel("Test Filter (optional)")
         grepPanel.add(grepLabel, BorderLayout.WEST)
         grep.name = "Playwright.grep"
         grepLabel.labelFor = grep
@@ -100,11 +101,19 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
 
         // grep invert
         val grepInvertPanel = JPanel(BorderLayout(5, 0))
-        val grepInvertLabel = JLabel("Inverted Test Filter")
+        val grepInvertLabel = JLabel("Inverted Test Filter (optional)")
         grepInvertPanel.add(grepInvertLabel, BorderLayout.WEST)
         grepInvert.name = "Playwright.grepInvert"
         grepInvertLabel.labelFor = grepInvert
         grepInvertPanel.add(grepInvert, BorderLayout.CENTER)
+
+        // project name
+        val projectPanel = JPanel(BorderLayout(5, 0))
+        val projectLabel = JLabel("Project Name (optional)")
+        projectPanel.add(projectLabel, BorderLayout.WEST)
+        project.name = "Playwright.project"
+        projectLabel.labelFor = project
+        projectPanel.add(project, BorderLayout.CENTER)
 
         val integrationPanel = VerticalPanel()
         integrationPanel.add(browserPanel)
@@ -114,6 +123,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         integrationPanel.add(repeatEachPanel)
         integrationPanel.add(grepPanel)
         integrationPanel.add(grepInvertPanel)
+        integrationPanel.add(projectPanel)
         integrationPanel.add(extraOptionsPanel)
 
         add(integrationPanel, BorderLayout.CENTER)
@@ -145,6 +155,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
             element.extraOptions = extraOptions.text
             element.grep = grep.text
             element.grepInvert = grepInvert.text
+            element.project = project.text
         }
     }
 
@@ -160,6 +171,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
             extraOptions.text = element.extraOptions
             grep.text = element.grep
             grepInvert.text = element.grepInvert
+            project.text = element.project
         }
     }
 }

@@ -69,6 +69,12 @@ class PlaywrightTestSampler : AbstractSampler() {
             setProperty(GREP_INVERT, value)
         }
 
+    var project: String
+        get() = getPropertyAsString(PROJECT, "")
+        set(value) {
+            setProperty(PROJECT, value)
+        }
+
     override fun sample(entry: Entry?): SampleResult {
         val sampleStartTime = System.currentTimeMillis()
         runNpxPlaywrightTest(testDirectory, extraOptions)
@@ -127,6 +133,10 @@ class PlaywrightTestSampler : AbstractSampler() {
             if (configFile.exists()){
                 parts.add("--config=${configFile}")
             }
+            if (project.isNotEmpty()){
+                parts.add("--project")
+                parts.add(project)
+            }
 
             if (extraOptions.isNotEmpty())
                 parts.add(extraOptions)
@@ -149,5 +159,6 @@ class PlaywrightTestSampler : AbstractSampler() {
         private const val TIMEOUT = "Playwright.timeout"
         private const val GREP = "Playwright.grep"
         private const val GREP_INVERT = "Playwright.grepInvert"
+        private const val PROJECT = "Playwright.project"
     }
 }
