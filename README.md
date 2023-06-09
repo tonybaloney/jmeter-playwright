@@ -1,48 +1,31 @@
 # jmeter-playwright
 
-experimental JMeter Plugin to launch playwright from a custom thread group.
+experimental JMeter Plugin to launch `playwright test` as a load test from JMeter and measure performance data.
 
-![Working screenshot](docs/screenshots/screenshot-playwright.png)
+Designed to be used to generate large load from a Playwright test generated using [codegen](https://playwright.dev/docs/codegen), [Playwright UI](https://playwright.dev/docs/test-ui-mode), or [Playwright's Visual Studio extensions](https://playwright.dev/docs/getting-started-vscode).
+
+## Prerequisites
+
+- Requires playwright to be installed and the `playwright install` process to have already been run
+- Requires NodeJS
+- Requires JMeter 5.1+
+- A Playwright test suite
 
 ## Installation
 
-Copy the JAR file from this site's [releases](https://github.com/tonybaloney/jmeter-playwright/releases) into your JMeter `lib/ext` directory. Requires JMeter 5+.
+Copy the JAR file from this site's [packages](https://github.com/tonybaloney/jmeter-playwright/packages) into your JMeter `lib/ext` directory and restart JMeter.
 
-## Components
+## Usage
 
-### Playwright Thread Group
+Create a Thread Group within JMeter and add the "Playwright test sampler" to the thread group. This sampler executes Playwright test within a folder to run your playwright tests and converts the results into
+JMeter Sample Results with timing. 
 
-![Working screenshot](docs/screenshots/thread-group.png)
+Configure all your Playwright options from inside JMeter:
 
-Replaces the builtin Thread Group with similar controls to set the number of users. Each thread represents a Browser Context in Playwright. 
-All samples and assertions inside the group will be done in parallel for the number of users you configure.
-Set loops to repeat the steps in order.
+![Working screenshot](docs/screenshots/playwright-test-sampler.png)
 
-### Playwright Sampler
+Because a single sampler can run multiple tests, the Sample Results are captured as sub-results in a tree:
 
-![Working screenshot](docs/screenshots/sampler.png)
+![Results Graph](docs/screenshots/playwright-results.png)
 
-This sampler will sample the navigation to a URL for the load time, or the time it takes for the DOM to complete, or for all network activity to cease (configurable).
-
-Samples will be recorded using the complete time.
-
-### Playwright Click Post Processor
-
-![Working screenshot](docs/screenshots/click-processor.png)
-
-Configure a selector (the element to find) and then it will click on that element.
-
-### Playwright Fill Post Processor
-
-![Working screenshot](docs/screenshots/fill-processor.png)
-
-Configure a selector and then the value, it will type the text into that box.
-
-### Playwright Assertion
-
-![Working screenshot](docs/screenshots/assertion.png)
-
-Assert that an element on the page meets the criteria (is visible, is hidden etc).
-
-Optionally, take a screenshot if the assertion fails. Check the logs for the path to the screenshot. 
-
+Each sample result represents a test case in Playwright test. The Load Time value is the time taken for that test case. 
