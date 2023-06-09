@@ -1,0 +1,116 @@
+package com.microsoft.playwright.jmeter.junit
+
+import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class property (
+        @JsonProperty("name") var name: String? = "",
+        @JsonProperty("value") var value: String? = ""
+)
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class properties (
+        @JsonProperty("property") var property: List<property>? = null
+)
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class testcase (
+        @JsonProperty("name") var name: String = "",
+) {
+    var skipped: Int = 0
+    @JsonProperty("error")
+    var error: List<Error> = emptyList()
+
+    @JacksonXmlElementWrapper(useWrapping = false)
+    @JsonProperty("failure")
+    var failure: List<failure> = emptyList()
+
+    @JacksonXmlElementWrapper(useWrapping = false)
+    @JsonProperty("system-out")
+    var systemOut: List<systemOut> = emptyList()
+
+    @JacksonXmlElementWrapper(useWrapping = false)
+    @JsonProperty("system-err")
+    var systemErr: List<systemOut> = emptyList()
+
+    @JsonProperty("assertions")
+    var assertions: String = ""
+
+    @JsonProperty("time")
+    var time: Double = 0.0
+
+    @JsonProperty("classname")
+    var classname: String = ""
+
+    @JsonProperty("status")
+    var status: String = ""
+
+    var properties: properties? = null
+}
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class testsuite (
+        @JsonProperty("name") var name: String = "",
+    ) {
+    var properties: properties? = null
+    @JacksonXmlElementWrapper(useWrapping = false)
+    var testcase: List<testcase> = emptyList()
+    var tests: Int = 0
+    @JsonProperty("system-out")
+    var systemOut: String = ""
+    @JsonProperty("system-err")
+    var systemErr: String = ""
+
+    var time: Double = 0.0
+    var failures: Int = 0
+    var skipped: Int = 0
+    var disabled: Int = 0
+    var errors: Int = 0
+    var timestamp: String = ""
+    var hostname: String = ""
+    var id: String = ""
+
+    @JsonProperty("package")
+    var _package: String = ""
+}
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class testsuites (
+        @JsonProperty("tests") var tests: Int = 0) {
+    var id: String = ""
+    @JsonProperty("name") var name: String = ""
+    @JacksonXmlElementWrapper(useWrapping = false)
+    var testsuite: List<testsuite> = emptyList()
+    var failures: Int = 0
+    var skipped: Int = 0
+    var disabled: Int = 0
+    var errors: Int = 0
+    var time: Double = 0.0
+}
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class error (
+    var content: String = "",
+    var type: String = "",
+    var message: String = ""
+)
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class failure (
+        @JsonProperty("type")var type: String = "",
+        @JsonProperty("message")var message: String = "" ) {
+    @JacksonXmlCData
+    @JacksonXmlText
+    var content: String = ""
+}
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+data class systemOut (@JacksonXmlCData
+                      @JacksonXmlText
+                      var content: String = "") {
+
+}
