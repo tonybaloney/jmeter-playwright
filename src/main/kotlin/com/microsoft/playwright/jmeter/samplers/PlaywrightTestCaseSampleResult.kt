@@ -7,6 +7,21 @@ import org.apache.jmeter.samplers.SampleResult
 import java.time.ZonedDateTime
 import kotlin.math.roundToLong
 
+class PlaywrightTestEmptySampleResult(startedAt: Long, finishedAt: Long): SampleResult() {
+    init {
+        startTime = startedAt
+        endTime = finishedAt
+        isSuccessful = true
+    }
+    override fun toString(): String {
+        return "Empty Playwright test run"
+    }
+
+    override fun getErrorCount(): Int {
+        return 0
+    }
+}
+
 class PlaywrightTestSampleResult(var testsuites: testsuites, startedAt: Long, finishedAt: Long) : SampleResult() {
     init {
         startTime = startedAt
