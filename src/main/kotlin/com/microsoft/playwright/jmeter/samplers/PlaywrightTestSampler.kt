@@ -105,7 +105,7 @@ class PlaywrightTestSampler : AbstractSampler() {
             }
             return suiteResult
         } else {
-            return SampleResult()
+            return PlaywrightTestEmptySampleResult(sampleStartTime, sampleEndTime)
         }
     }
 
