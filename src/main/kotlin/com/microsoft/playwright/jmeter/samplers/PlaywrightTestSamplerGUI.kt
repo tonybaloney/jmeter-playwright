@@ -51,7 +51,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         // Config path
         val configFilePanel = JPanel(BorderLayout(5, 0))
         val configFileLabel = JLabel("Playwright Config (optional)")
-        configFilePanel.add(testDirectoryLabel, BorderLayout.WEST)
+        configFilePanel.add(configFileLabel, BorderLayout.WEST)
         configFile.name = "Playwright.configFile"
         configFileLabel.labelFor = configFile
         configFile.fileSelectionMode = JFileChooser.FILES_ONLY
