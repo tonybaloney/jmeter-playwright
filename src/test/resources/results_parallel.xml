@@ -1,0 +1,42 @@
+<testsuites id="" name="" tests="10" failures="0" skipped="0" errors="0" time="11.374548000097274">
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.463" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.463">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.843" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.843">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.463" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.463">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.84" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.84">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.464" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.464">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.428" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.428">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.336" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.336">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="2.915" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="2.915">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="3.415" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="3.415">
+</testcase>
+</testsuite>
+<testsuite name="map.spec.ts" timestamp="1686271846793" hostname="" tests="1" failures="0" skipped="0" time="2.886" errors="0">
+<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="2.886">
+</testcase>
+</testsuite>
+</testsuites>

@@ -19,7 +19,7 @@ class PlaywrightTestSampleResult(var testsuites: testsuites, startedAt: Long, fi
     }
 
     override fun getTime(): Long {
-        return (testsuites.time.toDouble() * 1000).roundToLong()
+        return (testsuites.time * 1000).roundToLong()
     }
 
     override fun getErrorCount(): Int {
@@ -36,7 +36,7 @@ class PlaywrightTestCaseSampleResult(var testcase: testcase, testsuite: testsuit
     }
 
     override fun getTime(): Long {
-        return (testcase.time.toDouble() * 1000).roundToLong()
+        return (testcase.time * 1000).roundToLong()
     }
 
     override fun getResponseMessage(): String {
@@ -55,6 +55,6 @@ class PlaywrightTestSuiteSampleResult(var testsuite: testsuite) : SampleResult()
     }
 
     override fun getTime(): Long {
-        return (testsuite.time.toDouble() * 1000).roundToLong()
+        return (testsuite.time * 1000).roundToLong()
     }
 }

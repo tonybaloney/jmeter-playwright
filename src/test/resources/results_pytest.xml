@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="158" time="192.256"
+               timestamp="2023-06-09T09:02:56.705867" hostname="anthonys-imac.lan">
+        <testcase classname="test.integration.test_all_operators" name="test_operator[halstead]" time="9.033"/>
+        <testcase classname="test.integration.test_all_operators" name="test_operator[cyclomatic]" time="3.470"/>
+        <testcase classname="test.integration.test_all_operators" name="test_operator[maintainability]" time="2.174"/>
+        <testcase classname="test.integration.test_all_operators" name="test_operator[raw]" time="1.943"/>
+        <testcase classname="test.integration.test_all_operators" name="test_operator[halstead,cyclomatic]"
+                  time="2.129"/>
+        <testcase classname="test.integration.test_all_operators" name="test_operator[maintainability,raw]"
+                  time="2.062"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator[halstead,cyclomatic,maintainability,raw]" time="2.158"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[halstead]" time="1.168"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[cyclomatic]" time="1.123"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[maintainability]" time="1.151"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[raw]" time="1.272"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[halstead,cyclomatic]" time="1.112"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[maintainability,raw]" time="1.227"/>
+        <testcase classname="test.integration.test_all_operators"
+                  name="test_operator_on_code_with_metric_named_objects[halstead,cyclomatic,maintainability,raw]"
+                  time="1.206"/>
+        <testcase classname="test.integration.test_archiver" name="test_git_end_to_end" time="0.388"/>
+        <testcase classname="test.integration.test_archiver" name="test_dirty_git" time="0.145"/>
+        <testcase classname="test.integration.test_archiver" name="test_detached_head" time="0.367"/>
+        <testcase classname="test.integration.test_build" name="test_build_not_git_repo" time="0.959"/>
+        <testcase classname="test.integration.test_build" name="test_build_custom_cache" time="1.715"/>
+        <testcase classname="test.integration.test_build" name="test_build_invalid_path" time="0.007"/>
+        <testcase classname="test.integration.test_build" name="test_build_crash" time="1.347"/>
+        <testcase classname="test.integration.test_build" name="test_build" time="1.500"/>
+        <testcase classname="test.integration.test_build" name="test_build_with_config" time="1.145"/>
+        <testcase classname="test.integration.test_build" name="test_build_twice" time="2.468"/>
+        <testcase classname="test.integration.test_build" name="test_build_no_commits" time="0.054"/>
+        <testcase classname="test.integration.test_build" name="test_build_dirty_repo" time="2.435"/>
+        <testcase classname="test.integration.test_build" name="test_build_no_git_history" time="0.097"/>
+        <testcase classname="test.integration.test_build" name="test_build_archiver[filesystem]" time="1.303"/>
+        <testcase classname="test.integration.test_build" name="test_build_archiver[git]" time="1.690"/>
+        <testcase classname="test.integration.test_complex_commits" name="test_skip_files" time="1.676"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_no_cache" time="0.193"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_no_path" time="0.049"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output" time="2.450"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_all" time="2.605"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_bad_path" time="3.951"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_remove_all" time="3.277"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_more_complex" time="3.149"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_less_complex" time="3.396"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_loc" time="2.370"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_loc_and_revision" time="2.581"/>
+        <testcase classname="test.integration.test_diff" name="test_diff_output_rank" time="3.083"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_no_cache" time="0.136"/>
+        <testcase classname="test.integration.test_graph" name="test_graph" time="4.280"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_all" time="2.173"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_all_with_shorthand_metric" time="1.565"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_changes" time="1.703"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_custom_x" time="2.021"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_aggregate" time="1.842"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_individual" time="1.996"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_path" time="1.596"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_multiple" time="2.103"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_multiple_custom_x" time="1.640"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_multiple_path" time="1.638"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_output" time="1.517"/>
+        <testcase classname="test.integration.test_graph" name="test_graph_output_granular" time="1.531"/>
+        <testcase classname="test.integration.test_index" name="test_index_no_cache" time="0.011"/>
+        <testcase classname="test.integration.test_index" name="test_index" time="1.568"/>
+        <testcase classname="test.integration.test_index" name="test_index_with_messages" time="1.493"/>
+        <testcase classname="test.integration.test_ipynb" name="test_index_with_ipynb" time="2.979"/>
+        <testcase classname="test.integration.test_ipynb" name="test_index_and_message_with_ipynb" time="1.739"/>
+        <testcase classname="test.integration.test_ipynb" name="test_report" time="1.673"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_no_cache" time="0.013"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_single_file_default_metric" time="1.489"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_default_metric" time="2.106"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_default_metric_no_path"
+                  time="1.910"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_default_metric_master" time="1.855"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_default_invalid_revision"
+                  time="1.546"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_default_unindexed_revision"
+                  time="1.757"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_single_file_informational" time="1.456"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_custom_metric" time="1.697"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_no_path_target" time="1.987"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_limit" time="2.029"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_desc" time="1.617"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_invalid_key" time="1.581"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_directory_asc" time="1.465"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_total_above_threshold" time="1.741"/>
+        <testcase classname="test.integration.test_rank" name="test_rank_total_below_threshold" time="1.490"/>
+        <testcase classname="test.integration.test_report" name="test_report_no_cache" time="0.013"/>
+        <testcase classname="test.integration.test_report" name="test_report" time="1.599"/>
+        <testcase classname="test.integration.test_report" name="test_report_granular" time="1.558"/>
+        <testcase classname="test.integration.test_report" name="test_report_not_found" time="1.426"/>
+        <testcase classname="test.integration.test_report" name="test_report_default_metrics" time="1.523"/>
+        <testcase classname="test.integration.test_report" name="test_report_path" time="1.426"/>
+        <testcase classname="test.integration.test_report" name="test_report_with_message" time="1.529"/>
+        <testcase classname="test.integration.test_report" name="test_report_with_message_and_n" time="1.498"/>
+        <testcase classname="test.integration.test_report" name="test_report_high_metric" time="1.478"/>
+        <testcase classname="test.integration.test_report" name="test_report_short_metric" time="1.490"/>
+        <testcase classname="test.integration.test_report" name="test_report_low_metric" time="1.693"/>
+        <testcase classname="test.integration.test_report" name="test_report_html_format" time="3.437"/>
+        <testcase classname="test.integration.test_report" name="test_report_html_format_target_folder" time="1.798"/>
+        <testcase classname="test.integration.test_report" name="test_report_html_format_target_file" time="1.453"/>
+        <testcase classname="test.integration.test_report" name="test_report_console_format" time="1.530"/>
+        <testcase classname="test.integration.test_report" name="test_report_not_existing_format" time="1.999"/>
+        <testcase classname="test.integration.test_state" name="test_state_defaults" time="2.219"/>
+        <testcase classname="test.integration.test_state" name="test_index" time="1.540"/>
+        <testcase classname="test.integration.test_wily" name="test_list_metrics" time="2.032"/>
+        <testcase classname="test.integration.test_wily" name="test_clean" time="1.497"/>
+        <testcase classname="test.integration.test_wily" name="test_clean_no_cache" time="0.010"/>
+        <testcase classname="test.integration.test_wily" name="test_list_metrics_no_cache" time="0.008"/>
+        <testcase classname="test.unit.test_archivers" name="test_basearchiver" time="0.004"/>
+        <testcase classname="test.unit.test_archivers" name="test_defaults" time="0.003"/>
+        <testcase classname="test.unit.test_archivers" name="test_resolve_archiver" time="0.007"/>
+        <testcase classname="test.unit.test_archivers" name="test_bad_resolve_archiver" time="0.005"/>
+        <testcase classname="test.unit.test_archivers" name="test_git_init" time="0.010"/>
+        <testcase classname="test.unit.test_archivers" name="test_git_revisions" time="0.009"/>
+        <testcase classname="test.unit.test_build_unit" name="test_build_simple" time="1.101"/>
+        <testcase classname="test.unit.test_cache" name="test_exists" time="0.009"/>
+        <testcase classname="test.unit.test_cache" name="test_exists_older" time="0.010"/>
+        <testcase classname="test.unit.test_cache" name="test_not_exists" time="0.004"/>
+        <testcase classname="test.unit.test_cache" name="test_get_default_metrics_empty" time="0.012"/>
+        <testcase classname="test.unit.test_cache" name="test_create_and_delete" time="0.012"/>
+        <testcase classname="test.unit.test_cache" name="test_create_when_exists" time="0.011"/>
+        <testcase classname="test.unit.test_cache" name="test_clean_when_not_exists" time="0.009"/>
+        <testcase classname="test.unit.test_cache" name="test_store_basic" time="0.010"/>
+        <testcase classname="test.unit.test_cache" name="test_store_twice" time="0.012"/>
+        <testcase classname="test.unit.test_cache" name="test_store_relative_paths" time="0.011"/>
+        <testcase classname="test.unit.test_cache" name="test_store_index" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_init" time="0.004"/>
+        <testcase classname="test.unit.test_cli" name="test_help" time="0.006"/>
+        <testcase classname="test.unit.test_cli" name="test_setup" time="0.007"/>
+        <testcase classname="test.unit.test_cli" name="test_handle_no_cache_no" time="0.007"/>
+        <testcase classname="test.unit.test_cli" name="test_handle_no_cache" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_build" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_build_with_opts" time="0.007"/>
+        <testcase classname="test.unit.test_cli" name="test_index" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_index_with_opts" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_index_with_no_message" time="0.010"/>
+        <testcase classname="test.unit.test_cli" name="test_report" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_report_with_opts" time="0.007"/>
+        <testcase classname="test.unit.test_cli" name="test_report_html_format" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_report_console_format" time="0.010"/>
+        <testcase classname="test.unit.test_cli" name="test_report_not_existing_format" time="0.010"/>
+        <testcase classname="test.unit.test_cli" name="test_report_html_format_with_output" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_graph" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_graph_multiple_metrics" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_graph_with_output" time="0.010"/>
+        <testcase classname="test.unit.test_cli" name="test_diff" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_diff_with_metrics" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_clean" time="0.009"/>
+        <testcase classname="test.unit.test_cli" name="test_clean_with_prompt" time="0.008"/>
+        <testcase classname="test.unit.test_cli" name="test_clean_with_prompt_no_value" time="0.010"/>
+        <testcase classname="test.unit.test_config" name="test_config_empty_defaults" time="0.012"/>
+        <testcase classname="test.unit.test_config" name="test_config_archiver" time="0.009"/>
+        <testcase classname="test.unit.test_config" name="test_config_operators[foo,bar-expected_operators0]"
+                  time="0.009"/>
+        <testcase classname="test.unit.test_config" name="test_config_operators[foo, bar-expected_operators1]"
+                  time="0.011"/>
+        <testcase classname="test.unit.test_config" name="test_config_operators[foo, bar,-expected_operators2]"
+                  time="0.011"/>
+        <testcase classname="test.unit.test_config" name="test_config_operators[   foo,bar   , baz-expected_operators3]"
+                  time="0.009"/>
+        <testcase classname="test.unit.test_config" name="test_config_max_revisions" time="0.009"/>
+        <testcase classname="test.unit.test_config" name="test_config_cache_path" time="0.010"/>
+        <testcase classname="test.unit.test_cyclomatic" name="test_cyclomatic_bad_entry_data" time="0.005"/>
+        <testcase classname="test.unit.test_cyclomatic" name="test_cyclomatic_error_case" time="0.007"/>
+        <testcase classname="test.unit.test_cyclomatic" name="test_cyclomatic_error_case_unexpected" time="0.006"/>
+        <testcase classname="test.unit.test_operators" name="test_resolve_operator" time="0.003"/>
+        <testcase classname="test.unit.test_operators" name="test_resolve_bad_operator" time="0.005"/>
+        <testcase classname="test.unit.test_operators" name="test_resolve_operators" time="0.004"/>
+        <testcase classname="test.unit.test_operators" name="test_resolve_metric" time="0.003"/>
+        <testcase classname="test.unit.test_operators" name="test_resolve_invalid_metric" time="0.004"/>
+        <testcase classname="test.unit.test_operators" name="test_resolve_short_metric" time="0.013"/>
+    </testsuite>
+</testsuites>

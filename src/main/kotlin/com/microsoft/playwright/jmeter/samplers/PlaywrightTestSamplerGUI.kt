@@ -10,6 +10,7 @@ import javax.swing.*
 class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
     private val browserComboBox: JComboBox<BrowserType> = JComboBox<BrowserType>(BrowserType.values())
     private var testDirectory: JFileChooser = JFileChooser()
+    private var extraOptions: JTextField = JTextField()
 
     init {
         layout = BorderLayout(0, 5)
@@ -29,7 +30,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         browserLabel.labelFor = browserComboBox
         browserPanel.add(browserComboBox, BorderLayout.CENTER)
 
-        // Browser
+        // Test directory
         val testDirectoryPanel = JPanel(BorderLayout(5, 0))
         val testDirectoryLabel = JLabel("Test Directory")
         testDirectoryPanel.add(testDirectoryLabel, BorderLayout.WEST)
@@ -38,10 +39,19 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         testDirectory.fileSelectionMode = JFileChooser.DIRECTORIES_ONLY
         testDirectoryPanel.add(testDirectory, BorderLayout.CENTER)
 
+        // Test directory
+        val extraOptionsPanel = JPanel(BorderLayout(5, 0))
+        val extraOptionsLabel = JLabel("Extra CLI Options")
+        extraOptionsPanel.add(extraOptionsLabel, BorderLayout.WEST)
+        extraOptions.name = "Playwright.extraOptions"
+        extraOptionsLabel.labelFor = extraOptions
+        extraOptionsPanel.add(extraOptions, BorderLayout.CENTER)
+
 
         val integrationPanel = VerticalPanel()
         integrationPanel.add(browserPanel)
         integrationPanel.add(testDirectoryPanel)
+        integrationPanel.add(extraOptions)
         add(integrationPanel, BorderLayout.CENTER)
     }
 
@@ -64,6 +74,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         if (element is PlaywrightTestSampler) {
             element.browserType = browserComboBox.selectedItem as BrowserType
             element.testDirectory = testDirectory.selectedFile ?: testDirectory.currentDirectory
+            element.extraOptions = extraOptions.text
         }
     }
 
@@ -72,6 +83,7 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
         if (element is PlaywrightTestSampler) {
             browserComboBox.selectedItem = element.browserType
             testDirectory.selectedFile = element.testDirectory
+            extraOptions.text = element.extraOptions
         }
     }
 }

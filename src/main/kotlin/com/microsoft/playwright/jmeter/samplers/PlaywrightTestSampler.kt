@@ -27,9 +27,15 @@ class PlaywrightTestSampler : AbstractSampler() {
             setProperty(TEST_DIRECTORY, value.toString())
         }
 
+    var extraOptions: String
+        get() = getPropertyAsString(EXTRA_OPTIONS, "")
+        set(value) {
+            setProperty(EXTRA_OPTIONS, value)
+        }
+
     override fun sample(entry: Entry?): SampleResult {
         val sampleStartTime = System.currentTimeMillis()
-        runNpxPlaywrightTest(testDirectory)
+        runNpxPlaywrightTest(testDirectory, extraOptions)
         val sampleEndTime = System.currentTimeMillis()
         val result = proc?.inputStream?.bufferedReader()?.readText() ?: ""
         val errorResult = proc?.errorStream?.bufferedReader()?.readText() ?: ""
@@ -61,11 +67,15 @@ class PlaywrightTestSampler : AbstractSampler() {
         }
     }
 
-    private fun runNpxPlaywrightTest(workingDir: File) {
+    private fun runNpxPlaywrightTest(workingDir: File, extraOptions: String) {
         try {
             val parts = arrayListOf("npx", "playwright", "test", "--reporter", "junit")
-            log.info("Launching process $parts in directory ${workingDir}.")
-            this.proc = Runtime.getRuntime().exec(parts.joinToString(" ") , null, workingDir)
+
+            var cli = parts.joinToString(" ")
+            if (extraOptions.isNotEmpty())
+                cli = "$cli $extraOptions"
+            log.info("Launching $cli in directory ${workingDir}.")
+            this.proc = Runtime.getRuntime().exec(cli, null, workingDir)
         } catch(e: IOException) {
             log.error(e.message)
             log.error(e.stackTraceToString())
@@ -75,5 +85,6 @@ class PlaywrightTestSampler : AbstractSampler() {
     companion object {
         private const val BROWSER = "Playwright.browser"
         private const val TEST_DIRECTORY = "Playwright.testDirectory"
+        private const val EXTRA_OPTIONS = "Playwright.extraOptions"
     }
 }

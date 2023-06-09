@@ -1,28 +1,41 @@
 <testsuites id="" name="" tests="68" failures="26" skipped="11" errors="0" time="219.75520399999618">
-<testsuite name="account.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="0" skipped="1" time="0.002" errors="0">
-<testcase name="My profile should be able to fill out personal info" classname="[chromium] › account.spec.ts › My profile › should be able to fill out personal info" time="0.002">
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="darkmode.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="3" time="0.001" errors="0">
-<testcase name="Dark Mode should be able to toggle dark mode" classname="[chromium] › darkmode.spec.ts › Dark Mode › should be able to toggle dark mode" time="0.001">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Dark Mode verify dark mode is pixel perfect - on" classname="[chromium] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - on" time="0">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Dark Mode verify dark mode is pixel perfect - off" classname="[chromium] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - off" time="0">
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="fileupload.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="1" skipped="0" time="7.364" errors="0">
-<testcase name="File Upload should be able to upload a file" classname="[chromium] › fileupload.spec.ts › File Upload › should be able to upload a file" time="7.364">
-<failure message="fileupload.spec.ts:5:7 should be able to upload a file" type="FAILURE">
-<![CDATA[  [chromium] › fileupload.spec.ts:5:7 › File Upload › should be able to upload a file ==============
+    <testsuite name="account.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="0" skipped="1"
+               time="0.002" errors="0">
+        <testcase name="My profile should be able to fill out personal info"
+                  classname="[chromium] › account.spec.ts › My profile › should be able to fill out personal info"
+                  time="0.002">
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="darkmode.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="3"
+               time="0.001" errors="0">
+        <testcase name="Dark Mode should be able to toggle dark mode"
+                  classname="[chromium] › darkmode.spec.ts › Dark Mode › should be able to toggle dark mode"
+                  time="0.001">
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Dark Mode verify dark mode is pixel perfect - on"
+                  classname="[chromium] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - on"
+                  time="0">
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Dark Mode verify dark mode is pixel perfect - off"
+                  classname="[chromium] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - off"
+                  time="0">
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="fileupload.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="1" skipped="0"
+               time="7.364" errors="0">
+        <testcase name="File Upload should be able to upload a file"
+                  classname="[chromium] › fileupload.spec.ts › File Upload › should be able to upload a file"
+                  time="7.364">
+            <failure message="fileupload.spec.ts:5:7 should be able to upload a file" type="FAILURE">
+                <![CDATA[  [chromium] › fileupload.spec.ts:5:7 › File Upload › should be able to upload a file ==============
 
     Error: expect(received).toHaveURL(expected)
 
@@ -65,24 +78,35 @@
     test-results/fileupload-File-Upload-should-be-able-to-upload-a-file-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/fileupload-File-Upload-should-be-able-to-upload-a-file-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="fixtures.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0" time="3.174" errors="0">
-<testcase name="Header - HomePage loaded via fixture should be able to hover over header menus" classname="[chromium] › fixtures.spec.ts › Header - HomePage loaded via fixture › should be able to hover over header menus" time="2.113">
-</testcase>
-<testcase name="Footer - Homepage loaded via fixture should be able to select footer menu - fixtures" classname="[chromium] › fixtures.spec.ts › Footer - Homepage loaded via fixture › should be able to select footer menu - fixtures" time="1.061">
-</testcase>
-</testsuite>
-<testsuite name="internalapi.data.spec.ts" timestamp="1686205132741" hostname="" tests="6" failures="6" skipped="0" time="11.92" errors="0">
-<testcase name="API data Assertions - category should be able to filter products by category - Controllers and then assert category" classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Controllers and then assert category" time="1.248">
-<failure message="internalapi.data.spec.ts:11:9 should be able to filter products by category - Controllers and then assert category" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.data.spec.ts:11:9 › API data Assertions - category › should be able to filter products by category - Controllers and then assert category 
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="fixtures.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0"
+               time="3.174" errors="0">
+        <testcase name="Header - HomePage loaded via fixture should be able to hover over header menus"
+                  classname="[chromium] › fixtures.spec.ts › Header - HomePage loaded via fixture › should be able to hover over header menus"
+                  time="2.113">
+        </testcase>
+        <testcase name="Footer - Homepage loaded via fixture should be able to select footer menu - fixtures"
+                  classname="[chromium] › fixtures.spec.ts › Footer - Homepage loaded via fixture › should be able to select footer menu - fixtures"
+                  time="1.061">
+        </testcase>
+    </testsuite>
+    <testsuite name="internalapi.data.spec.ts" timestamp="1686205132741" hostname="" tests="6" failures="6" skipped="0"
+               time="11.92" errors="0">
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Controllers and then assert category"
+                classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Controllers and then assert category"
+                time="1.248">
+            <failure
+                    message="internalapi.data.spec.ts:11:9 should be able to filter products by category - Controllers and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.data.spec.ts:11:9 › API data Assertions - category › should be able to filter products by category - Controllers and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -103,16 +127,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-c4d73-category---Controllers-and-then-assert-category-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-c4d73-category---Controllers-and-then-assert-category-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Desktops and then assert category" classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Desktops and then assert category" time="1.726">
-<failure message="internalapi.data.spec.ts:32:9 should be able to filter products by category - Desktops and then assert category" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.data.spec.ts:32:9 › API data Assertions - category › should be able to filter products by category - Desktops and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Desktops and then assert category"
+                classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Desktops and then assert category"
+                time="1.726">
+            <failure
+                    message="internalapi.data.spec.ts:32:9 should be able to filter products by category - Desktops and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.data.spec.ts:32:9 › API data Assertions - category › should be able to filter products by category - Desktops and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -133,16 +162,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-b5a38-by-category---Desktops-and-then-assert-category-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-b5a38-by-category---Desktops-and-then-assert-category-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Laptops and then assert category" classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Laptops and then assert category" time="2.617">
-<failure message="internalapi.data.spec.ts:53:9 should be able to filter products by category - Laptops and then assert category" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.data.spec.ts:53:9 › API data Assertions - category › should be able to filter products by category - Laptops and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Laptops and then assert category"
+                classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Laptops and then assert category"
+                time="2.617">
+            <failure
+                    message="internalapi.data.spec.ts:53:9 should be able to filter products by category - Laptops and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.data.spec.ts:53:9 › API data Assertions - category › should be able to filter products by category - Laptops and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -163,16 +197,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-e321e--by-category---Laptops-and-then-assert-category-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-e321e--by-category---Laptops-and-then-assert-category-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Mobiles and then assert category" classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category" time="2.328">
-<failure message="internalapi.data.spec.ts:74:9 should be able to filter products by category - Mobiles and then assert category" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.data.spec.ts:74:9 › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Mobiles and then assert category"
+                classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category"
+                time="2.328">
+            <failure
+                    message="internalapi.data.spec.ts:74:9 should be able to filter products by category - Mobiles and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.data.spec.ts:74:9 › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -193,16 +232,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-6ad86--by-category---Mobiles-and-then-assert-category-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-6ad86--by-category---Mobiles-and-then-assert-category-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Monitors and then assert category" classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Monitors and then assert category" time="1.621">
-<failure message="internalapi.data.spec.ts:95:9 should be able to filter products by category - Monitors and then assert category" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.data.spec.ts:95:9 › API data Assertions - category › should be able to filter products by category - Monitors and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Monitors and then assert category"
+                classname="[chromium] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Monitors and then assert category"
+                time="1.621">
+            <failure
+                    message="internalapi.data.spec.ts:95:9 should be able to filter products by category - Monitors and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.data.spec.ts:95:9 › API data Assertions - category › should be able to filter products by category - Monitors and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -223,16 +267,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-b923e-by-category---Monitors-and-then-assert-category-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-b923e-by-category---Monitors-and-then-assert-category-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - count should be able to get all products, verify status and get and assert count of each product" classname="[chromium] › internalapi.data.spec.ts › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product" time="2.38">
-<failure message="internalapi.data.spec.ts:126:9 should be able to get all products, verify status and get and assert count of each product" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.data.spec.ts:126:9 › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - count should be able to get all products, verify status and get and assert count of each product"
+                classname="[chromium] › internalapi.data.spec.ts › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product"
+                time="2.38">
+            <failure
+                    message="internalapi.data.spec.ts:126:9 should be able to get all products, verify status and get and assert count of each product"
+                    type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.data.spec.ts:126:9 › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -253,18 +302,21 @@
     test-results/internalapi.data-API-data-Assertions---count-s-69af9-status-and-get-and-assert-count-of-each-product-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---count-s-69af9-status-and-get-and-assert-count-of-each-product-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="internalapi.spec.ts" timestamp="1686205132741" hostname="" tests="4" failures="4" skipped="0" time="9.285" errors="0">
-<testcase name="APIs should be able to load search by text data" classname="[chromium] › internalapi.spec.ts › APIs › should be able to load search by text data" time="2.295">
-<failure message="internalapi.spec.ts:11:7 should be able to load search by text data" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.spec.ts:11:7 › APIs › should be able to load search by text data ========
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="internalapi.spec.ts" timestamp="1686205132741" hostname="" tests="4" failures="4" skipped="0"
+               time="9.285" errors="0">
+        <testcase name="APIs should be able to load search by text data"
+                  classname="[chromium] › internalapi.spec.ts › APIs › should be able to load search by text data"
+                  time="2.295">
+            <failure message="internalapi.spec.ts:11:7 should be able to load search by text data" type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.spec.ts:11:7 › APIs › should be able to load search by text data ========
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -285,16 +337,18 @@
     test-results/internalapi-APIs-should-be-able-to-load-search-by-text-data-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-load-search-by-text-data-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="APIs should be able to load products list" classname="[chromium] › internalapi.spec.ts › APIs › should be able to load products list" time="2.82">
-<failure message="internalapi.spec.ts:18:7 should be able to load products list" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.spec.ts:18:7 › APIs › should be able to load products list ==============
+            </system-out>
+        </testcase>
+        <testcase name="APIs should be able to load products list"
+                  classname="[chromium] › internalapi.spec.ts › APIs › should be able to load products list"
+                  time="2.82">
+            <failure message="internalapi.spec.ts:18:7 should be able to load products list" type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.spec.ts:18:7 › APIs › should be able to load products list ==============
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -315,16 +369,18 @@
     test-results/internalapi-APIs-should-be-able-to-load-products-list-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-load-products-list-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="APIs should be able to load product details" classname="[chromium] › internalapi.spec.ts › APIs › should be able to load product details" time="2.567">
-<failure message="internalapi.spec.ts:25:7 should be able to load product details" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.spec.ts:25:7 › APIs › should be able to load product details ============
+            </system-out>
+        </testcase>
+        <testcase name="APIs should be able to load product details"
+                  classname="[chromium] › internalapi.spec.ts › APIs › should be able to load product details"
+                  time="2.567">
+            <failure message="internalapi.spec.ts:25:7 should be able to load product details" type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.spec.ts:25:7 › APIs › should be able to load product details ============
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -345,16 +401,18 @@
     test-results/internalapi-APIs-should-be-able-to-load-product-details-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-load-product-details-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="APIs should be able to filter products by brands" classname="[chromium] › internalapi.spec.ts › APIs › should be able to filter products by brands" time="1.603">
-<failure message="internalapi.spec.ts:32:7 should be able to filter products by brands" type="FAILURE">
-<![CDATA[  [chromium] › internalapi.spec.ts:32:7 › APIs › should be able to filter products by brands =======
+            </system-out>
+        </testcase>
+        <testcase name="APIs should be able to filter products by brands"
+                  classname="[chromium] › internalapi.spec.ts › APIs › should be able to filter products by brands"
+                  time="1.603">
+            <failure message="internalapi.spec.ts:32:7 should be able to filter products by brands" type="FAILURE">
+                <![CDATA[  [chromium] › internalapi.spec.ts:32:7 › APIs › should be able to filter products by brands =======
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -375,44 +433,62 @@
     test-results/internalapi-APIs-should-be-able-to-filter-products-by-brands-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-filter-products-by-brands-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="map.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="0" time="8.975" errors="0">
-<testcase name="Map should display bing maps iframe" classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="1.584">
-</testcase>
-<testcase name="Map should zoom in on bing maps iframe" classname="[chromium] › map.spec.ts › Map › should zoom in on bing maps iframe" time="3.742">
-</testcase>
-<testcase name="Map should zoom out on bing maps iframe" classname="[chromium] › map.spec.ts › Map › should zoom out on bing maps iframe" time="3.649">
-</testcase>
-</testsuite>
-<testsuite name="mocks.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0" time="0.598" errors="0">
-<testcase name="Mocks should be able to load mock home page" classname="[chromium] › mocks.spec.ts › Mocks › should be able to load mock home page" time="0.324">
-</testcase>
-<testcase name="Mocks should be able to load product details" classname="[chromium] › mocks.spec.ts › Mocks › should be able to load product details" time="0.274">
-</testcase>
-</testsuite>
-<testsuite name="pages.spec.ts" timestamp="1686205132741" hostname="" tests="12" failures="2" skipped="0" time="139.51" errors="0">
-<testcase name="Header should be able to search by text" classname="[chromium] › pages.spec.ts › Header › should be able to search by text" time="2.271">
-</testcase>
-<testcase name="Header should be able to select category" classname="[chromium] › pages.spec.ts › Header › should be able to select category" time="1.66">
-</testcase>
-<testcase name="Header should be able to hover over header menus" classname="[chromium] › pages.spec.ts › Header › should be able to hover over header menus" time="1.669">
-</testcase>
-<testcase name="Header should be able to select header menu" classname="[chromium] › pages.spec.ts › Header › should be able to select header menu" time="1.38">
-</testcase>
-<testcase name="Home page should be able to select buy now in corosel" classname="[chromium] › pages.spec.ts › Home page › should be able to select buy now in corosel" time="1.517">
-</testcase>
-<testcase name="Home page should be able to select more details in corosel" classname="[chromium] › pages.spec.ts › Home page › should be able to select more details in corosel" time="1.729">
-</testcase>
-<testcase name="Home page should be able to click start shopping" classname="[chromium] › pages.spec.ts › Home page › should be able to click start shopping" time="60">
-<failure message="pages.spec.ts:46:7 should be able to click start shopping" type="FAILURE">
-<![CDATA[  [chromium] › pages.spec.ts:46:7 › Home page › should be able to click start shopping =============
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="map.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="0" time="8.975"
+               errors="0">
+        <testcase name="Map should display bing maps iframe"
+                  classname="[chromium] › map.spec.ts › Map › should display bing maps iframe" time="1.584">
+        </testcase>
+        <testcase name="Map should zoom in on bing maps iframe"
+                  classname="[chromium] › map.spec.ts › Map › should zoom in on bing maps iframe" time="3.742">
+        </testcase>
+        <testcase name="Map should zoom out on bing maps iframe"
+                  classname="[chromium] › map.spec.ts › Map › should zoom out on bing maps iframe" time="3.649">
+        </testcase>
+    </testsuite>
+    <testsuite name="mocks.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0"
+               time="0.598" errors="0">
+        <testcase name="Mocks should be able to load mock home page"
+                  classname="[chromium] › mocks.spec.ts › Mocks › should be able to load mock home page" time="0.324">
+        </testcase>
+        <testcase name="Mocks should be able to load product details"
+                  classname="[chromium] › mocks.spec.ts › Mocks › should be able to load product details" time="0.274">
+        </testcase>
+    </testsuite>
+    <testsuite name="pages.spec.ts" timestamp="1686205132741" hostname="" tests="12" failures="2" skipped="0"
+               time="139.51" errors="0">
+        <testcase name="Header should be able to search by text"
+                  classname="[chromium] › pages.spec.ts › Header › should be able to search by text" time="2.271">
+        </testcase>
+        <testcase name="Header should be able to select category"
+                  classname="[chromium] › pages.spec.ts › Header › should be able to select category" time="1.66">
+        </testcase>
+        <testcase name="Header should be able to hover over header menus"
+                  classname="[chromium] › pages.spec.ts › Header › should be able to hover over header menus"
+                  time="1.669">
+        </testcase>
+        <testcase name="Header should be able to select header menu"
+                  classname="[chromium] › pages.spec.ts › Header › should be able to select header menu" time="1.38">
+        </testcase>
+        <testcase name="Home page should be able to select buy now in corosel"
+                  classname="[chromium] › pages.spec.ts › Home page › should be able to select buy now in corosel"
+                  time="1.517">
+        </testcase>
+        <testcase name="Home page should be able to select more details in corosel"
+                  classname="[chromium] › pages.spec.ts › Home page › should be able to select more details in corosel"
+                  time="1.729">
+        </testcase>
+        <testcase name="Home page should be able to click start shopping"
+                  classname="[chromium] › pages.spec.ts › Home page › should be able to click start shopping" time="60">
+            <failure message="pages.spec.ts:46:7 should be able to click start shopping" type="FAILURE">
+                <![CDATA[  [chromium] › pages.spec.ts:46:7 › Home page › should be able to click start shopping =============
 
     Test timeout of 60000ms exceeded.
 
@@ -439,18 +515,22 @@
     test-results/pages-Home-page-should-be-able-to-click-start-shopping-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/pages-Home-page-should-be-able-to-click-start-shopping-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="Home page should be able to explore other products" classname="[chromium] › pages.spec.ts › Home page › should be able to explore other products" time="1.33">
-</testcase>
-<testcase name="Home page should be able to start shopping in footer" classname="[chromium] › pages.spec.ts › Home page › should be able to start shopping in footer" time="60">
-<failure message="pages.spec.ts:54:7 should be able to start shopping in footer" type="FAILURE">
-<![CDATA[  [chromium] › pages.spec.ts:54:7 › Home page › should be able to start shopping in footer =========
+            </system-out>
+        </testcase>
+        <testcase name="Home page should be able to explore other products"
+                  classname="[chromium] › pages.spec.ts › Home page › should be able to explore other products"
+                  time="1.33">
+        </testcase>
+        <testcase name="Home page should be able to start shopping in footer"
+                  classname="[chromium] › pages.spec.ts › Home page › should be able to start shopping in footer"
+                  time="60">
+            <failure message="pages.spec.ts:54:7 should be able to start shopping in footer" type="FAILURE">
+                <![CDATA[  [chromium] › pages.spec.ts:54:7 › Home page › should be able to start shopping in footer =========
 
     Test timeout of 60000ms exceeded.
 
@@ -477,44 +557,62 @@
     test-results/pages-Home-page-should-be-able-to-start-shopping-in-footer-chromium/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/pages-Home-page-should-be-able-to-start-shopping-in-footer-chromium/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="Product Listing should be able to select product to view details" classname="[chromium] › pages.spec.ts › Product Listing › should be able to select product to view details" time="3.709">
-</testcase>
-<testcase name="Product Listing should be able to filter product by brands" classname="[chromium] › pages.spec.ts › Product Listing › should be able to filter product by brands" time="3.061">
-</testcase>
-<testcase name="Footer should be able to select footer menu" classname="[chromium] › pages.spec.ts › Footer › should be able to select footer menu" time="1.184">
-</testcase>
-</testsuite>
-<testsuite name="account.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="0" skipped="1" time="0.002" errors="0">
-<testcase name="My profile should be able to fill out personal info" classname="[firefox] › account.spec.ts › My profile › should be able to fill out personal info" time="0.002">
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="darkmode.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="3" time="0.001" errors="0">
-<testcase name="Dark Mode should be able to toggle dark mode" classname="[firefox] › darkmode.spec.ts › Dark Mode › should be able to toggle dark mode" time="0.001">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Dark Mode verify dark mode is pixel perfect - on" classname="[firefox] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - on" time="0">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Dark Mode verify dark mode is pixel perfect - off" classname="[firefox] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - off" time="0">
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="fileupload.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="1" skipped="0" time="10.06" errors="0">
-<testcase name="File Upload should be able to upload a file" classname="[firefox] › fileupload.spec.ts › File Upload › should be able to upload a file" time="10.06">
-<failure message="fileupload.spec.ts:5:7 should be able to upload a file" type="FAILURE">
-<![CDATA[  [firefox] › fileupload.spec.ts:5:7 › File Upload › should be able to upload a file ===============
+            </system-out>
+        </testcase>
+        <testcase name="Product Listing should be able to select product to view details"
+                  classname="[chromium] › pages.spec.ts › Product Listing › should be able to select product to view details"
+                  time="3.709">
+        </testcase>
+        <testcase name="Product Listing should be able to filter product by brands"
+                  classname="[chromium] › pages.spec.ts › Product Listing › should be able to filter product by brands"
+                  time="3.061">
+        </testcase>
+        <testcase name="Footer should be able to select footer menu"
+                  classname="[chromium] › pages.spec.ts › Footer › should be able to select footer menu" time="1.184">
+        </testcase>
+    </testsuite>
+    <testsuite name="account.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="0" skipped="1"
+               time="0.002" errors="0">
+        <testcase name="My profile should be able to fill out personal info"
+                  classname="[firefox] › account.spec.ts › My profile › should be able to fill out personal info"
+                  time="0.002">
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="darkmode.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="3"
+               time="0.001" errors="0">
+        <testcase name="Dark Mode should be able to toggle dark mode"
+                  classname="[firefox] › darkmode.spec.ts › Dark Mode › should be able to toggle dark mode"
+                  time="0.001">
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Dark Mode verify dark mode is pixel perfect - on"
+                  classname="[firefox] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - on"
+                  time="0">
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Dark Mode verify dark mode is pixel perfect - off"
+                  classname="[firefox] › darkmode.spec.ts › Dark Mode › verify dark mode is pixel perfect - off"
+                  time="0">
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="fileupload.spec.ts" timestamp="1686205132741" hostname="" tests="1" failures="1" skipped="0"
+               time="10.06" errors="0">
+        <testcase name="File Upload should be able to upload a file"
+                  classname="[firefox] › fileupload.spec.ts › File Upload › should be able to upload a file"
+                  time="10.06">
+            <failure message="fileupload.spec.ts:5:7 should be able to upload a file" type="FAILURE">
+                <![CDATA[  [firefox] › fileupload.spec.ts:5:7 › File Upload › should be able to upload a file ===============
 
     Error: expect(received).toHaveURL(expected)
 
@@ -557,24 +655,35 @@
     test-results/fileupload-File-Upload-should-be-able-to-upload-a-file-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/fileupload-File-Upload-should-be-able-to-upload-a-file-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="fixtures.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0" time="6.259" errors="0">
-<testcase name="Header - HomePage loaded via fixture should be able to hover over header menus" classname="[firefox] › fixtures.spec.ts › Header - HomePage loaded via fixture › should be able to hover over header menus" time="4.737">
-</testcase>
-<testcase name="Footer - Homepage loaded via fixture should be able to select footer menu - fixtures" classname="[firefox] › fixtures.spec.ts › Footer - Homepage loaded via fixture › should be able to select footer menu - fixtures" time="1.522">
-</testcase>
-</testsuite>
-<testsuite name="internalapi.data.spec.ts" timestamp="1686205132741" hostname="" tests="6" failures="6" skipped="0" time="22.462" errors="0">
-<testcase name="API data Assertions - category should be able to filter products by category - Controllers and then assert category" classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Controllers and then assert category" time="2.667">
-<failure message="internalapi.data.spec.ts:11:9 should be able to filter products by category - Controllers and then assert category" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.data.spec.ts:11:9 › API data Assertions - category › should be able to filter products by category - Controllers and then assert category 
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="fixtures.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0"
+               time="6.259" errors="0">
+        <testcase name="Header - HomePage loaded via fixture should be able to hover over header menus"
+                  classname="[firefox] › fixtures.spec.ts › Header - HomePage loaded via fixture › should be able to hover over header menus"
+                  time="4.737">
+        </testcase>
+        <testcase name="Footer - Homepage loaded via fixture should be able to select footer menu - fixtures"
+                  classname="[firefox] › fixtures.spec.ts › Footer - Homepage loaded via fixture › should be able to select footer menu - fixtures"
+                  time="1.522">
+        </testcase>
+    </testsuite>
+    <testsuite name="internalapi.data.spec.ts" timestamp="1686205132741" hostname="" tests="6" failures="6" skipped="0"
+               time="22.462" errors="0">
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Controllers and then assert category"
+                classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Controllers and then assert category"
+                time="2.667">
+            <failure
+                    message="internalapi.data.spec.ts:11:9 should be able to filter products by category - Controllers and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.data.spec.ts:11:9 › API data Assertions - category › should be able to filter products by category - Controllers and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -595,16 +704,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-c4d73-category---Controllers-and-then-assert-category-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-c4d73-category---Controllers-and-then-assert-category-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Desktops and then assert category" classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Desktops and then assert category" time="3.579">
-<failure message="internalapi.data.spec.ts:32:9 should be able to filter products by category - Desktops and then assert category" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.data.spec.ts:32:9 › API data Assertions - category › should be able to filter products by category - Desktops and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Desktops and then assert category"
+                classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Desktops and then assert category"
+                time="3.579">
+            <failure
+                    message="internalapi.data.spec.ts:32:9 should be able to filter products by category - Desktops and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.data.spec.ts:32:9 › API data Assertions - category › should be able to filter products by category - Desktops and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -625,16 +739,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-b5a38-by-category---Desktops-and-then-assert-category-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-b5a38-by-category---Desktops-and-then-assert-category-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Laptops and then assert category" classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Laptops and then assert category" time="3.363">
-<failure message="internalapi.data.spec.ts:53:9 should be able to filter products by category - Laptops and then assert category" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.data.spec.ts:53:9 › API data Assertions - category › should be able to filter products by category - Laptops and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Laptops and then assert category"
+                classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Laptops and then assert category"
+                time="3.363">
+            <failure
+                    message="internalapi.data.spec.ts:53:9 should be able to filter products by category - Laptops and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.data.spec.ts:53:9 › API data Assertions - category › should be able to filter products by category - Laptops and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -655,16 +774,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-e321e--by-category---Laptops-and-then-assert-category-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-e321e--by-category---Laptops-and-then-assert-category-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Mobiles and then assert category" classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category" time="4.439">
-<failure message="internalapi.data.spec.ts:74:9 should be able to filter products by category - Mobiles and then assert category" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.data.spec.ts:74:9 › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Mobiles and then assert category"
+                classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category"
+                time="4.439">
+            <failure
+                    message="internalapi.data.spec.ts:74:9 should be able to filter products by category - Mobiles and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.data.spec.ts:74:9 › API data Assertions - category › should be able to filter products by category - Mobiles and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -685,16 +809,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-6ad86--by-category---Mobiles-and-then-assert-category-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-6ad86--by-category---Mobiles-and-then-assert-category-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - category should be able to filter products by category - Monitors and then assert category" classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Monitors and then assert category" time="3.856">
-<failure message="internalapi.data.spec.ts:95:9 should be able to filter products by category - Monitors and then assert category" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.data.spec.ts:95:9 › API data Assertions - category › should be able to filter products by category - Monitors and then assert category 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - category should be able to filter products by category - Monitors and then assert category"
+                classname="[firefox] › internalapi.data.spec.ts › API data Assertions - category › should be able to filter products by category - Monitors and then assert category"
+                time="3.856">
+            <failure
+                    message="internalapi.data.spec.ts:95:9 should be able to filter products by category - Monitors and then assert category"
+                    type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.data.spec.ts:95:9 › API data Assertions - category › should be able to filter products by category - Monitors and then assert category
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -715,16 +844,21 @@
     test-results/internalapi.data-API-data-Assertions---categor-b923e-by-category---Monitors-and-then-assert-category-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---categor-b923e-by-category---Monitors-and-then-assert-category-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="API data Assertions - count should be able to get all products, verify status and get and assert count of each product" classname="[firefox] › internalapi.data.spec.ts › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product" time="4.558">
-<failure message="internalapi.data.spec.ts:126:9 should be able to get all products, verify status and get and assert count of each product" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.data.spec.ts:126:9 › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product 
+            </system-out>
+        </testcase>
+        <testcase
+                name="API data Assertions - count should be able to get all products, verify status and get and assert count of each product"
+                classname="[firefox] › internalapi.data.spec.ts › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product"
+                time="4.558">
+            <failure
+                    message="internalapi.data.spec.ts:126:9 should be able to get all products, verify status and get and assert count of each product"
+                    type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.data.spec.ts:126:9 › API data Assertions - count › should be able to get all products, verify status and get and assert count of each product
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -745,18 +879,21 @@
     test-results/internalapi.data-API-data-Assertions---count-s-69af9-status-and-get-and-assert-count-of-each-product-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi.data-API-data-Assertions---count-s-69af9-status-and-get-and-assert-count-of-each-product-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="internalapi.spec.ts" timestamp="1686205132741" hostname="" tests="4" failures="4" skipped="0" time="17.215" errors="0">
-<testcase name="APIs should be able to load search by text data" classname="[firefox] › internalapi.spec.ts › APIs › should be able to load search by text data" time="3.743">
-<failure message="internalapi.spec.ts:11:7 should be able to load search by text data" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.spec.ts:11:7 › APIs › should be able to load search by text data =========
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="internalapi.spec.ts" timestamp="1686205132741" hostname="" tests="4" failures="4" skipped="0"
+               time="17.215" errors="0">
+        <testcase name="APIs should be able to load search by text data"
+                  classname="[firefox] › internalapi.spec.ts › APIs › should be able to load search by text data"
+                  time="3.743">
+            <failure message="internalapi.spec.ts:11:7 should be able to load search by text data" type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.spec.ts:11:7 › APIs › should be able to load search by text data =========
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -777,16 +914,18 @@
     test-results/internalapi-APIs-should-be-able-to-load-search-by-text-data-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-load-search-by-text-data-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="APIs should be able to load products list" classname="[firefox] › internalapi.spec.ts › APIs › should be able to load products list" time="5.213">
-<failure message="internalapi.spec.ts:18:7 should be able to load products list" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.spec.ts:18:7 › APIs › should be able to load products list ===============
+            </system-out>
+        </testcase>
+        <testcase name="APIs should be able to load products list"
+                  classname="[firefox] › internalapi.spec.ts › APIs › should be able to load products list"
+                  time="5.213">
+            <failure message="internalapi.spec.ts:18:7 should be able to load products list" type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.spec.ts:18:7 › APIs › should be able to load products list ===============
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -807,16 +946,18 @@
     test-results/internalapi-APIs-should-be-able-to-load-products-list-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-load-products-list-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="APIs should be able to load product details" classname="[firefox] › internalapi.spec.ts › APIs › should be able to load product details" time="4.65">
-<failure message="internalapi.spec.ts:25:7 should be able to load product details" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.spec.ts:25:7 › APIs › should be able to load product details =============
+            </system-out>
+        </testcase>
+        <testcase name="APIs should be able to load product details"
+                  classname="[firefox] › internalapi.spec.ts › APIs › should be able to load product details"
+                  time="4.65">
+            <failure message="internalapi.spec.ts:25:7 should be able to load product details" type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.spec.ts:25:7 › APIs › should be able to load product details =============
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -837,16 +978,18 @@
     test-results/internalapi-APIs-should-be-able-to-load-product-details-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-load-product-details-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="APIs should be able to filter products by brands" classname="[firefox] › internalapi.spec.ts › APIs › should be able to filter products by brands" time="3.609">
-<failure message="internalapi.spec.ts:32:7 should be able to filter products by brands" type="FAILURE">
-<![CDATA[  [firefox] › internalapi.spec.ts:32:7 › APIs › should be able to filter products by brands ========
+            </system-out>
+        </testcase>
+        <testcase name="APIs should be able to filter products by brands"
+                  classname="[firefox] › internalapi.spec.ts › APIs › should be able to filter products by brands"
+                  time="3.609">
+            <failure message="internalapi.spec.ts:32:7 should be able to filter products by brands" type="FAILURE">
+                <![CDATA[  [firefox] › internalapi.spec.ts:32:7 › APIs › should be able to filter products by brands ========
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -867,50 +1010,69 @@
     test-results/internalapi-APIs-should-be-able-to-filter-products-by-brands-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/internalapi-APIs-should-be-able-to-filter-products-by-brands-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="map.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="3" time="0.002" errors="0">
-<testcase name="Map should display bing maps iframe" classname="[firefox] › map.spec.ts › Map › should display bing maps iframe" time="0.002">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Map should zoom in on bing maps iframe" classname="[firefox] › map.spec.ts › Map › should zoom in on bing maps iframe" time="0">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Map should zoom out on bing maps iframe" classname="[firefox] › map.spec.ts › Map › should zoom out on bing maps iframe" time="0">
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="mocks.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0" time="2.461" errors="0">
-<testcase name="Mocks should be able to load mock home page" classname="[firefox] › mocks.spec.ts › Mocks › should be able to load mock home page" time="1.925">
-</testcase>
-<testcase name="Mocks should be able to load product details" classname="[firefox] › mocks.spec.ts › Mocks › should be able to load product details" time="0.536">
-</testcase>
-</testsuite>
-<testsuite name="pages.spec.ts" timestamp="1686205132741" hostname="" tests="12" failures="2" skipped="0" time="149.668" errors="0">
-<testcase name="Header should be able to search by text" classname="[firefox] › pages.spec.ts › Header › should be able to search by text" time="2.784">
-</testcase>
-<testcase name="Header should be able to select category" classname="[firefox] › pages.spec.ts › Header › should be able to select category" time="3.871">
-</testcase>
-<testcase name="Header should be able to hover over header menus" classname="[firefox] › pages.spec.ts › Header › should be able to hover over header menus" time="1.986">
-</testcase>
-<testcase name="Header should be able to select header menu" classname="[firefox] › pages.spec.ts › Header › should be able to select header menu" time="2.191">
-</testcase>
-<testcase name="Home page should be able to select buy now in corosel" classname="[firefox] › pages.spec.ts › Home page › should be able to select buy now in corosel" time="2.819">
-</testcase>
-<testcase name="Home page should be able to select more details in corosel" classname="[firefox] › pages.spec.ts › Home page › should be able to select more details in corosel" time="1.938">
-</testcase>
-<testcase name="Home page should be able to click start shopping" classname="[firefox] › pages.spec.ts › Home page › should be able to click start shopping" time="59.999">
-<failure message="pages.spec.ts:46:7 should be able to click start shopping" type="FAILURE">
-<![CDATA[  [firefox] › pages.spec.ts:46:7 › Home page › should be able to click start shopping ==============
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="map.spec.ts" timestamp="1686205132741" hostname="" tests="3" failures="0" skipped="3" time="0.002"
+               errors="0">
+        <testcase name="Map should display bing maps iframe"
+                  classname="[firefox] › map.spec.ts › Map › should display bing maps iframe" time="0.002">
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Map should zoom in on bing maps iframe"
+                  classname="[firefox] › map.spec.ts › Map › should zoom in on bing maps iframe" time="0">
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Map should zoom out on bing maps iframe"
+                  classname="[firefox] › map.spec.ts › Map › should zoom out on bing maps iframe" time="0">
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="mocks.spec.ts" timestamp="1686205132741" hostname="" tests="2" failures="0" skipped="0"
+               time="2.461" errors="0">
+        <testcase name="Mocks should be able to load mock home page"
+                  classname="[firefox] › mocks.spec.ts › Mocks › should be able to load mock home page" time="1.925">
+        </testcase>
+        <testcase name="Mocks should be able to load product details"
+                  classname="[firefox] › mocks.spec.ts › Mocks › should be able to load product details" time="0.536">
+        </testcase>
+    </testsuite>
+    <testsuite name="pages.spec.ts" timestamp="1686205132741" hostname="" tests="12" failures="2" skipped="0"
+               time="149.668" errors="0">
+        <testcase name="Header should be able to search by text"
+                  classname="[firefox] › pages.spec.ts › Header › should be able to search by text" time="2.784">
+        </testcase>
+        <testcase name="Header should be able to select category"
+                  classname="[firefox] › pages.spec.ts › Header › should be able to select category" time="3.871">
+        </testcase>
+        <testcase name="Header should be able to hover over header menus"
+                  classname="[firefox] › pages.spec.ts › Header › should be able to hover over header menus"
+                  time="1.986">
+        </testcase>
+        <testcase name="Header should be able to select header menu"
+                  classname="[firefox] › pages.spec.ts › Header › should be able to select header menu" time="2.191">
+        </testcase>
+        <testcase name="Home page should be able to select buy now in corosel"
+                  classname="[firefox] › pages.spec.ts › Home page › should be able to select buy now in corosel"
+                  time="2.819">
+        </testcase>
+        <testcase name="Home page should be able to select more details in corosel"
+                  classname="[firefox] › pages.spec.ts › Home page › should be able to select more details in corosel"
+                  time="1.938">
+        </testcase>
+        <testcase name="Home page should be able to click start shopping"
+                  classname="[firefox] › pages.spec.ts › Home page › should be able to click start shopping"
+                  time="59.999">
+            <failure message="pages.spec.ts:46:7 should be able to click start shopping" type="FAILURE">
+                <![CDATA[  [firefox] › pages.spec.ts:46:7 › Home page › should be able to click start shopping ==============
 
     Test timeout of 60000ms exceeded.
 
@@ -937,18 +1099,22 @@
     test-results/pages-Home-page-should-be-able-to-click-start-shopping-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/pages-Home-page-should-be-able-to-click-start-shopping-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="Home page should be able to explore other products" classname="[firefox] › pages.spec.ts › Home page › should be able to explore other products" time="1.971">
-</testcase>
-<testcase name="Home page should be able to start shopping in footer" classname="[firefox] › pages.spec.ts › Home page › should be able to start shopping in footer" time="60.001">
-<failure message="pages.spec.ts:54:7 should be able to start shopping in footer" type="FAILURE">
-<![CDATA[  [firefox] › pages.spec.ts:54:7 › Home page › should be able to start shopping in footer ==========
+            </system-out>
+        </testcase>
+        <testcase name="Home page should be able to explore other products"
+                  classname="[firefox] › pages.spec.ts › Home page › should be able to explore other products"
+                  time="1.971">
+        </testcase>
+        <testcase name="Home page should be able to start shopping in footer"
+                  classname="[firefox] › pages.spec.ts › Home page › should be able to start shopping in footer"
+                  time="60.001">
+            <failure message="pages.spec.ts:54:7 should be able to start shopping in footer" type="FAILURE">
+                <![CDATA[  [firefox] › pages.spec.ts:54:7 › Home page › should be able to start shopping in footer ==========
 
     Test timeout of 60000ms exceeded.
 
@@ -975,18 +1141,23 @@
     test-results/pages-Home-page-should-be-able-to-start-shopping-in-footer-firefox/test-failed-1.png
     ------------------------------------------------------------------------------------------------
 ]]>
-</failure>
-<system-out>
-<![CDATA[
+            </failure>
+            <system-out>
+                <![CDATA[
 [[ATTACHMENT|../test-results/pages-Home-page-should-be-able-to-start-shopping-in-footer-firefox/test-failed-1.png]]
 ]]>
-</system-out>
-</testcase>
-<testcase name="Product Listing should be able to select product to view details" classname="[firefox] › pages.spec.ts › Product Listing › should be able to select product to view details" time="5.755">
-</testcase>
-<testcase name="Product Listing should be able to filter product by brands" classname="[firefox] › pages.spec.ts › Product Listing › should be able to filter product by brands" time="4.744">
-</testcase>
-<testcase name="Footer should be able to select footer menu" classname="[firefox] › pages.spec.ts › Footer › should be able to select footer menu" time="1.609">
-</testcase>
-</testsuite>
+            </system-out>
+        </testcase>
+        <testcase name="Product Listing should be able to select product to view details"
+                  classname="[firefox] › pages.spec.ts › Product Listing › should be able to select product to view details"
+                  time="5.755">
+        </testcase>
+        <testcase name="Product Listing should be able to filter product by brands"
+                  classname="[firefox] › pages.spec.ts › Product Listing › should be able to filter product by brands"
+                  time="4.744">
+        </testcase>
+        <testcase name="Footer should be able to select footer menu"
+                  classname="[firefox] › pages.spec.ts › Footer › should be able to select footer menu" time="1.609">
+        </testcase>
+    </testsuite>
 </testsuites>

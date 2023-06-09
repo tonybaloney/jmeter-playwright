@@ -1,102 +1,122 @@
 <testsuites id="" name="" tests="41" failures="27" skipped="14" errors="0" time="73.2930759999752">
-<testsuite name="api/cart.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="1" failures="0" skipped="1" time="0.029" errors="0">
-<testcase name="Shopping Cart API › should be able to GET shopping cart" classname="api/cart.spec.ts" time="0.029">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURLSHOPPINGCART">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="api/data.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="6" failures="0" skipped="6" time="0.025" errors="0">
-<testcase name="API data Assertions - category › should be able to filter products by category - Controllers and then assert category" classname="api/data.spec.ts" time="0.02">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="API data Assertions - category › should be able to filter products by category - Desktops and then assert category" classname="api/data.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="API data Assertions - category › should be able to filter products by category - Laptops and then assert category" classname="api/data.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="API data Assertions - category › should be able to filter products by category - Mobiles and then assert category" classname="api/data.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="API data Assertions - category › should be able to filter products by category - Monitors and then assert category" classname="api/data.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="API data Assertions - count › should be able to get all products, verify status and get and assert count of each product" classname="api/data.spec.ts" time="0.005">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="api/products.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="4" failures="0" skipped="4" time="0" errors="0">
-<testcase name="Products API › should be able to load search by text data" classname="api/products.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Products API › should be able to load products list" classname="api/products.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Products API › should be able to load product details" classname="api/products.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Products API › should be able to filter products by brands" classname="api/products.spec.ts" time="0">
-<properties>
-<property name="skip" value="requires REACT_APP_APIURL">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="cart.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="3" failures="3" skipped="0" time="25.023" errors="0">
-<testcase name="Shopping Cart › should be able to view cart" classname="cart.spec.ts" time="23.762">
-<failure message="cart.spec.ts:16:9 should be able to view cart" type="FAILURE">
-<![CDATA[  cart.spec.ts:16:9 › Shopping Cart › should be able to view cart ──────────────────────────────────
+    <testsuite name="api/cart.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="1" failures="0"
+               skipped="1" time="0.029" errors="0">
+        <testcase name="Shopping Cart API › should be able to GET shopping cart" classname="api/cart.spec.ts"
+                  time="0.029">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURLSHOPPINGCART">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="api/data.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="6" failures="0"
+               skipped="6" time="0.025" errors="0">
+        <testcase
+                name="API data Assertions - category › should be able to filter products by category - Controllers and then assert category"
+                classname="api/data.spec.ts" time="0.02">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase
+                name="API data Assertions - category › should be able to filter products by category - Desktops and then assert category"
+                classname="api/data.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase
+                name="API data Assertions - category › should be able to filter products by category - Laptops and then assert category"
+                classname="api/data.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase
+                name="API data Assertions - category › should be able to filter products by category - Mobiles and then assert category"
+                classname="api/data.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase
+                name="API data Assertions - category › should be able to filter products by category - Monitors and then assert category"
+                classname="api/data.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase
+                name="API data Assertions - count › should be able to get all products, verify status and get and assert count of each product"
+                classname="api/data.spec.ts" time="0.005">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="api/products.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="4" failures="0"
+               skipped="4" time="0" errors="0">
+        <testcase name="Products API › should be able to load search by text data" classname="api/products.spec.ts"
+                  time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Products API › should be able to load products list" classname="api/products.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Products API › should be able to load product details" classname="api/products.spec.ts"
+                  time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Products API › should be able to filter products by brands" classname="api/products.spec.ts"
+                  time="0">
+            <properties>
+                <property name="skip" value="requires REACT_APP_APIURL">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="cart.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="3" failures="3" skipped="0"
+               time="25.023" errors="0">
+        <testcase name="Shopping Cart › should be able to view cart" classname="cart.spec.ts" time="23.762">
+            <failure message="cart.spec.ts:16:9 should be able to view cart" type="FAILURE">
+                <![CDATA[  cart.spec.ts:16:9 › Shopping Cart › should be able to view cart ──────────────────────────────────
 
     TypeError: apiRequestContext.get: Invalid URL
 
@@ -110,11 +130,12 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/cart.spec.ts:5:36
 ]]>
-</failure>
-</testcase>
-<testcase name="Shopping Cart › should be able to increase and decrease test quantity" classname="cart.spec.ts" time="0.64">
-<failure message="cart.spec.ts:25:9 should be able to increase and decrease test quantity" type="FAILURE">
-<![CDATA[  cart.spec.ts:25:9 › Shopping Cart › should be able to increase and decrease test quantity ────────
+            </failure>
+        </testcase>
+        <testcase name="Shopping Cart › should be able to increase and decrease test quantity" classname="cart.spec.ts"
+                  time="0.64">
+            <failure message="cart.spec.ts:25:9 should be able to increase and decrease test quantity" type="FAILURE">
+                <![CDATA[  cart.spec.ts:25:9 › Shopping Cart › should be able to increase and decrease test quantity ────────
 
     TypeError: apiRequestContext.get: Invalid URL
 
@@ -128,11 +149,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/cart.spec.ts:5:36
 ]]>
-</failure>
-</testcase>
-<testcase name="Shopping Cart › should be able to remove items from cart" classname="cart.spec.ts" time="0.621">
-<failure message="cart.spec.ts:42:9 should be able to remove items from cart" type="FAILURE">
-<![CDATA[  cart.spec.ts:42:9 › Shopping Cart › should be able to remove items from cart ─────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Shopping Cart › should be able to remove items from cart" classname="cart.spec.ts" time="0.621">
+            <failure message="cart.spec.ts:42:9 should be able to remove items from cart" type="FAILURE">
+                <![CDATA[  cart.spec.ts:42:9 › Shopping Cart › should be able to remove items from cart ─────────────────────
 
     TypeError: apiRequestContext.get: Invalid URL
 
@@ -146,39 +167,43 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/cart.spec.ts:5:36
 ]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="darkmode.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="3" failures="0" skipped="3" time="0" errors="0">
-<testcase name="Dark Mode › should be able to toggle dark mode" classname="darkmode.spec.ts" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Dark Mode › verify dark mode is pixel perfect - on" classname="darkmode.spec.ts" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-<testcase name="Dark Mode › verify dark mode is pixel perfect - off" classname="darkmode.spec.ts" time="0">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
-<skipped>
-</skipped>
-</testcase>
-</testsuite>
-<testsuite name="discounts.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="4" failures="4" skipped="0" time="25.471" errors="0">
-<testcase name="Discount Codes › should be able to use VALID discount code DISCOUNT15" classname="discounts.spec.ts" time="23.784">
-<failure message="discounts.spec.ts:16:13 should be able to use VALID discount code DISCOUNT15" type="FAILURE">
-<![CDATA[  discounts.spec.ts:16:13 › Discount Codes › should be able to use VALID discount code DISCOUNT15 ──
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="darkmode.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="3" failures="0"
+               skipped="3" time="0" errors="0">
+        <testcase name="Dark Mode › should be able to toggle dark mode" classname="darkmode.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Dark Mode › verify dark mode is pixel perfect - on" classname="darkmode.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+        <testcase name="Dark Mode › verify dark mode is pixel perfect - off" classname="darkmode.spec.ts" time="0">
+            <properties>
+                <property name="skip" value="">
+                </property>
+            </properties>
+            <skipped>
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="discounts.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="4" failures="4"
+               skipped="0" time="25.471" errors="0">
+        <testcase name="Discount Codes › should be able to use VALID discount code DISCOUNT15"
+                  classname="discounts.spec.ts" time="23.784">
+            <failure message="discounts.spec.ts:16:13 should be able to use VALID discount code DISCOUNT15"
+                     type="FAILURE">
+                <![CDATA[  discounts.spec.ts:16:13 › Discount Codes › should be able to use VALID discount code DISCOUNT15 ──
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -195,11 +220,13 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/discounts.spec.ts:9:16
 ]]>
-</failure>
-</testcase>
-<testcase name="Discount Codes › should be able to use VALID discount code DISCOUNT10" classname="discounts.spec.ts" time="0.568">
-<failure message="discounts.spec.ts:16:13 should be able to use VALID discount code DISCOUNT10" type="FAILURE">
-<![CDATA[  discounts.spec.ts:16:13 › Discount Codes › should be able to use VALID discount code DISCOUNT10 ──
+            </failure>
+        </testcase>
+        <testcase name="Discount Codes › should be able to use VALID discount code DISCOUNT10"
+                  classname="discounts.spec.ts" time="0.568">
+            <failure message="discounts.spec.ts:16:13 should be able to use VALID discount code DISCOUNT10"
+                     type="FAILURE">
+                <![CDATA[  discounts.spec.ts:16:13 › Discount Codes › should be able to use VALID discount code DISCOUNT10 ──
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -216,11 +243,13 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/discounts.spec.ts:9:16
 ]]>
-</failure>
-</testcase>
-<testcase name="Discount Codes › should not be able to use INVALID discount code DISCOUNT20" classname="discounts.spec.ts" time="0.566">
-<failure message="discounts.spec.ts:26:13 should not be able to use INVALID discount code DISCOUNT20" type="FAILURE">
-<![CDATA[  discounts.spec.ts:26:13 › Discount Codes › should not be able to use INVALID discount code DISCOUNT20 
+            </failure>
+        </testcase>
+        <testcase name="Discount Codes › should not be able to use INVALID discount code DISCOUNT20"
+                  classname="discounts.spec.ts" time="0.566">
+            <failure message="discounts.spec.ts:26:13 should not be able to use INVALID discount code DISCOUNT20"
+                     type="FAILURE">
+                <![CDATA[  discounts.spec.ts:26:13 › Discount Codes › should not be able to use INVALID discount code DISCOUNT20
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -237,11 +266,13 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/discounts.spec.ts:9:16
 ]]>
-</failure>
-</testcase>
-<testcase name="Discount Codes › should not be able to use INVALID discount code DISCOUNT30" classname="discounts.spec.ts" time="0.553">
-<failure message="discounts.spec.ts:26:13 should not be able to use INVALID discount code DISCOUNT30" type="FAILURE">
-<![CDATA[  discounts.spec.ts:26:13 › Discount Codes › should not be able to use INVALID discount code DISCOUNT30 
+            </failure>
+        </testcase>
+        <testcase name="Discount Codes › should not be able to use INVALID discount code DISCOUNT30"
+                  classname="discounts.spec.ts" time="0.553">
+            <failure message="discounts.spec.ts:26:13 should not be able to use INVALID discount code DISCOUNT30"
+                     type="FAILURE">
+                <![CDATA[  discounts.spec.ts:26:13 › Discount Codes › should not be able to use INVALID discount code DISCOUNT30
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -258,13 +289,14 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/discounts.spec.ts:9:16
 ]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="fileupload.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="1" failures="1" skipped="0" time="0.532" errors="0">
-<testcase name="File Upload › should be able to upload a file" classname="fileupload.spec.ts" time="0.532">
-<failure message="fileupload.spec.ts:7:7 should be able to upload a file" type="FAILURE">
-<![CDATA[  fileupload.spec.ts:7:7 › File Upload › should be able to upload a file ───────────────────────────
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="fileupload.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="1" failures="1"
+               skipped="0" time="0.532" errors="0">
+        <testcase name="File Upload › should be able to upload a file" classname="fileupload.spec.ts" time="0.532">
+            <failure message="fileupload.spec.ts:7:7 should be able to upload a file" type="FAILURE">
+                <![CDATA[  fileupload.spec.ts:7:7 › File Upload › should be able to upload a file ───────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -281,13 +313,14 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/fileupload.spec.ts:8:16
 ]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="map.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="3" failures="3" skipped="0" time="1.669" errors="0">
-<testcase name="Map › should display bing maps iframe" classname="map.spec.ts" time="0.559">
-<failure message="map.spec.ts:21:7 should display bing maps iframe" type="FAILURE">
-<![CDATA[  map.spec.ts:21:7 › Map › should display bing maps iframe ─────────────────────────────────────────
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="map.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="3" failures="3" skipped="0"
+               time="1.669" errors="0">
+        <testcase name="Map › should display bing maps iframe" classname="map.spec.ts" time="0.559">
+            <failure message="map.spec.ts:21:7 should display bing maps iframe" type="FAILURE">
+                <![CDATA[  map.spec.ts:21:7 › Map › should display bing maps iframe ─────────────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -304,11 +337,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/map.spec.ts:15:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Map › should zoom in on bing maps iframe" classname="map.spec.ts" time="0.484">
-<failure message="map.spec.ts:33:7 should zoom in on bing maps iframe" type="FAILURE">
-<![CDATA[  map.spec.ts:33:7 › Map › should zoom in on bing maps iframe ──────────────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Map › should zoom in on bing maps iframe" classname="map.spec.ts" time="0.484">
+            <failure message="map.spec.ts:33:7 should zoom in on bing maps iframe" type="FAILURE">
+                <![CDATA[  map.spec.ts:33:7 › Map › should zoom in on bing maps iframe ──────────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -325,11 +358,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/map.spec.ts:15:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Map › should zoom out on bing maps iframe" classname="map.spec.ts" time="0.626">
-<failure message="map.spec.ts:37:7 should zoom out on bing maps iframe" type="FAILURE">
-<![CDATA[  map.spec.ts:37:7 › Map › should zoom out on bing maps iframe ─────────────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Map › should zoom out on bing maps iframe" classname="map.spec.ts" time="0.626">
+            <failure message="map.spec.ts:37:7 should zoom out on bing maps iframe" type="FAILURE">
+                <![CDATA[  map.spec.ts:37:7 › Map › should zoom out on bing maps iframe ─────────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -346,13 +379,14 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/map.spec.ts:15:14
 ]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="mocks.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="2" failures="2" skipped="0" time="1.277" errors="0">
-<testcase name="Mocks › should be able to load mock home page" classname="mocks.spec.ts" time="0.602">
-<failure message="mocks.spec.ts:5:9 should be able to load mock home page" type="FAILURE">
-<![CDATA[  mocks.spec.ts:5:9 › Mocks › should be able to load mock home page ────────────────────────────────
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="mocks.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="2" failures="2" skipped="0"
+               time="1.277" errors="0">
+        <testcase name="Mocks › should be able to load mock home page" classname="mocks.spec.ts" time="0.602">
+            <failure message="mocks.spec.ts:5:9 should be able to load mock home page" type="FAILURE">
+                <![CDATA[  mocks.spec.ts:5:9 › Mocks › should be able to load mock home page ────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -369,11 +403,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/mocks.spec.ts:11:20
 ]]>
-</failure>
-</testcase>
-<testcase name="Mocks › should be able to load product details" classname="mocks.spec.ts" time="0.675">
-<failure message="mocks.spec.ts:18:9 should be able to load product details" type="FAILURE">
-<![CDATA[  mocks.spec.ts:18:9 › Mocks › should be able to load product details ──────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Mocks › should be able to load product details" classname="mocks.spec.ts" time="0.675">
+            <failure message="mocks.spec.ts:18:9 should be able to load product details" type="FAILURE">
+                <![CDATA[  mocks.spec.ts:18:9 › Mocks › should be able to load product details ──────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -390,13 +424,14 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/mocks.spec.ts:29:18
 ]]>
-</failure>
-</testcase>
-</testsuite>
-<testsuite name="pages.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="14" failures="14" skipped="0" time="6.988" errors="0">
-<testcase name="Header › should be able to search by text" classname="pages.spec.ts" time="0.695">
-<failure message="pages.spec.ts:10:7 should be able to search by text" type="FAILURE">
-<![CDATA[  pages.spec.ts:10:7 › Header › should be able to search by text ───────────────────────────────────
+            </failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="pages.spec.ts" timestamp="2023-06-06T04:09:55.616Z" hostname="" tests="14" failures="14"
+               skipped="0" time="6.988" errors="0">
+        <testcase name="Header › should be able to search by text" classname="pages.spec.ts" time="0.695">
+            <failure message="pages.spec.ts:10:7 should be able to search by text" type="FAILURE">
+                <![CDATA[  pages.spec.ts:10:7 › Header › should be able to search by text ───────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -413,11 +448,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Header › should be able to select category" classname="pages.spec.ts" time="0.585">
-<failure message="pages.spec.ts:16:7 should be able to select category" type="FAILURE">
-<![CDATA[  pages.spec.ts:16:7 › Header › should be able to select category ──────────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Header › should be able to select category" classname="pages.spec.ts" time="0.585">
+            <failure message="pages.spec.ts:16:7 should be able to select category" type="FAILURE">
+                <![CDATA[  pages.spec.ts:16:7 › Header › should be able to select category ──────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -434,11 +469,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Header › should be able to hover over header menus" classname="pages.spec.ts" time="0.599">
-<failure message="pages.spec.ts:22:7 should be able to hover over header menus" type="FAILURE">
-<![CDATA[  pages.spec.ts:22:7 › Header › should be able to hover over header menus ──────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Header › should be able to hover over header menus" classname="pages.spec.ts" time="0.599">
+            <failure message="pages.spec.ts:22:7 should be able to hover over header menus" type="FAILURE">
+                <![CDATA[  pages.spec.ts:22:7 › Header › should be able to hover over header menus ──────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -455,11 +490,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Header › should be able to select header menu" classname="pages.spec.ts" time="0.614">
-<failure message="pages.spec.ts:30:7 should be able to select header menu" type="FAILURE">
-<![CDATA[  pages.spec.ts:30:7 › Header › should be able to select header menu ───────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Header › should be able to select header menu" classname="pages.spec.ts" time="0.614">
+            <failure message="pages.spec.ts:30:7 should be able to select header menu" type="FAILURE">
+                <![CDATA[  pages.spec.ts:30:7 › Header › should be able to select header menu ───────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -476,11 +511,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Carousel › prev and next buttons change slider" classname="pages.spec.ts" time="0.541">
-<failure message="pages.spec.ts:37:7 prev and next buttons change slider" type="FAILURE">
-<![CDATA[  pages.spec.ts:37:7 › Carousel › prev and next buttons change slider ──────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Carousel › prev and next buttons change slider" classname="pages.spec.ts" time="0.541">
+            <failure message="pages.spec.ts:37:7 prev and next buttons change slider" type="FAILURE">
+                <![CDATA[  pages.spec.ts:37:7 › Carousel › prev and next buttons change slider ──────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -497,11 +532,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Carousel › carousel buttons change slider" classname="pages.spec.ts" time="0.46">
-<failure message="pages.spec.ts:45:7 carousel buttons change slider" type="FAILURE">
-<![CDATA[  pages.spec.ts:45:7 › Carousel › carousel buttons change slider ───────────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Carousel › carousel buttons change slider" classname="pages.spec.ts" time="0.46">
+            <failure message="pages.spec.ts:45:7 carousel buttons change slider" type="FAILURE">
+                <![CDATA[  pages.spec.ts:45:7 › Carousel › carousel buttons change slider ───────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -518,11 +553,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Carousel › buy now button links to product page" classname="pages.spec.ts" time="0.458">
-<failure message="pages.spec.ts:53:7 buy now button links to product page" type="FAILURE">
-<![CDATA[  pages.spec.ts:53:7 › Carousel › buy now button links to product page ─────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Carousel › buy now button links to product page" classname="pages.spec.ts" time="0.458">
+            <failure message="pages.spec.ts:53:7 buy now button links to product page" type="FAILURE">
+                <![CDATA[  pages.spec.ts:53:7 › Carousel › buy now button links to product page ─────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -539,11 +574,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Carousel › more details links to list page" classname="pages.spec.ts" time="0.441">
-<failure message="pages.spec.ts:58:7 more details links to list page" type="FAILURE">
-<![CDATA[  pages.spec.ts:58:7 › Carousel › more details links to list page ──────────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Carousel › more details links to list page" classname="pages.spec.ts" time="0.441">
+            <failure message="pages.spec.ts:58:7 more details links to list page" type="FAILURE">
+                <![CDATA[  pages.spec.ts:58:7 › Carousel › more details links to list page ──────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -560,11 +595,12 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="CarouselVRT › verify carousel is pixel perfect - slide 1" classname="pages.spec.ts" time="0.406">
-<failure message="pages.spec.ts:66:7 verify carousel is pixel perfect - slide 1" type="FAILURE">
-<![CDATA[  pages.spec.ts:66:7 › CarouselVRT › verify carousel is pixel perfect - slide 1 ────────────────────
+            </failure>
+        </testcase>
+        <testcase name="CarouselVRT › verify carousel is pixel perfect - slide 1" classname="pages.spec.ts"
+                  time="0.406">
+            <failure message="pages.spec.ts:66:7 verify carousel is pixel perfect - slide 1" type="FAILURE">
+                <![CDATA[  pages.spec.ts:66:7 › CarouselVRT › verify carousel is pixel perfect - slide 1 ────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -581,11 +617,12 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="CarouselVRT › verify carousel is pixel perfect - slide 2" classname="pages.spec.ts" time="0.414">
-<failure message="pages.spec.ts:70:7 verify carousel is pixel perfect - slide 2" type="FAILURE">
-<![CDATA[  pages.spec.ts:70:7 › CarouselVRT › verify carousel is pixel perfect - slide 2 ────────────────────
+            </failure>
+        </testcase>
+        <testcase name="CarouselVRT › verify carousel is pixel perfect - slide 2" classname="pages.spec.ts"
+                  time="0.414">
+            <failure message="pages.spec.ts:70:7 verify carousel is pixel perfect - slide 2" type="FAILURE">
+                <![CDATA[  pages.spec.ts:70:7 › CarouselVRT › verify carousel is pixel perfect - slide 2 ────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -602,11 +639,12 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Product Listing › should be able to select product to view details" classname="pages.spec.ts" time="0.439">
-<failure message="pages.spec.ts:78:7 should be able to select product to view details" type="FAILURE">
-<![CDATA[  pages.spec.ts:78:7 › Product Listing › should be able to select product to view details ──────────
+            </failure>
+        </testcase>
+        <testcase name="Product Listing › should be able to select product to view details" classname="pages.spec.ts"
+                  time="0.439">
+            <failure message="pages.spec.ts:78:7 should be able to select product to view details" type="FAILURE">
+                <![CDATA[  pages.spec.ts:78:7 › Product Listing › should be able to select product to view details ──────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -623,11 +661,12 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Product Listing › should be able to filter product by brands" classname="pages.spec.ts" time="0.42">
-<failure message="pages.spec.ts:84:7 should be able to filter product by brands" type="FAILURE">
-<![CDATA[  pages.spec.ts:84:7 › Product Listing › should be able to filter product by brands ────────────────
+            </failure>
+        </testcase>
+        <testcase name="Product Listing › should be able to filter product by brands" classname="pages.spec.ts"
+                  time="0.42">
+            <failure message="pages.spec.ts:84:7 should be able to filter product by brands" type="FAILURE">
+                <![CDATA[  pages.spec.ts:84:7 › Product Listing › should be able to filter product by brands ────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -644,11 +683,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Product Details › Image does not break UI" classname="pages.spec.ts" time="0.407">
-<failure message="pages.spec.ts:91:7 Image does not break UI" type="FAILURE">
-<![CDATA[  pages.spec.ts:91:7 › Product Details › Image does not break UI ───────────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Product Details › Image does not break UI" classname="pages.spec.ts" time="0.407">
+            <failure message="pages.spec.ts:91:7 Image does not break UI" type="FAILURE">
+                <![CDATA[  pages.spec.ts:91:7 › Product Details › Image does not break UI ───────────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -665,11 +704,11 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-<testcase name="Footer › should be able to select footer menu" classname="pages.spec.ts" time="0.509">
-<failure message="pages.spec.ts:108:7 should be able to select footer menu" type="FAILURE">
-<![CDATA[  pages.spec.ts:108:7 › Footer › should be able to select footer menu ──────────────────────────────
+            </failure>
+        </testcase>
+        <testcase name="Footer › should be able to select footer menu" classname="pages.spec.ts" time="0.509">
+            <failure message="pages.spec.ts:108:7 should be able to select footer menu" type="FAILURE">
+                <![CDATA[  pages.spec.ts:108:7 › Footer › should be able to select footer menu ──────────────────────────────
 
     Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
     =========================== logs ===========================
@@ -686,7 +725,7 @@
 
         at /Users/anthonyshaw/Downloads/contosotraders-cloudtesting-main/src/ContosoTraders.Ui.Website/tests/pages.spec.ts:6:14
 ]]>
-</failure>
-</testcase>
-</testsuite>
+            </failure>
+        </testcase>
+    </testsuite>
 </testsuites>

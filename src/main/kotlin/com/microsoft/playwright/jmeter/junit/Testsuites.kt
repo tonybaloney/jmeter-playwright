@@ -41,7 +41,7 @@ data class testcase (
     var assertions: String = ""
 
     @JsonProperty("time")
-    var time: String = ""
+    var time: Double = 0.0
 
     @JsonProperty("classname")
     var classname: String = ""
@@ -65,7 +65,7 @@ data class testsuite (
     @JsonProperty("system-err")
     var systemErr: String = ""
 
-    var time: String = ""
+    var time: Double = 0.0
     var failures: Int = 0
     var skipped: Int = 0
     var disabled: Int = 0
@@ -80,16 +80,16 @@ data class testsuite (
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 data class testsuites (
-        @JsonProperty("name") var name: String = "",
         @JsonProperty("tests") var tests: Int = 0) {
     var id: String = ""
+    @JsonProperty("name") var name: String = ""
     @JacksonXmlElementWrapper(useWrapping = false)
     var testsuite: List<testsuite> = emptyList()
     var failures: Int = 0
     var skipped: Int = 0
     var disabled: Int = 0
     var errors: Int = 0
-    var time: String = ""
+    var time: Double = 0.0
 }
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
