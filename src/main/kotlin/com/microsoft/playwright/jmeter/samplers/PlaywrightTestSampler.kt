@@ -33,6 +33,42 @@ class PlaywrightTestSampler : AbstractSampler() {
             setProperty(EXTRA_OPTIONS, value)
         }
 
+    var configFile: File
+        get() = File(getPropertyAsString(CONFIG_FILE, ""))
+        set(value) {
+            setProperty(CONFIG_FILE, value.toString())
+        }
+
+    var workerCount: Int
+        get() = getPropertyAsInt(WORKER_COUNT, 0)
+        set(value) {
+            setProperty(WORKER_COUNT, value)
+        }
+
+    var repeatEach: Int
+        get() = getPropertyAsInt(REPEAT_EACH, 0)
+        set(value) {
+            setProperty(REPEAT_EACH, value)
+        }
+
+    var timeout: Int
+        get() = getPropertyAsInt(TIMEOUT, 30000)
+        set(value) {
+            setProperty(TIMEOUT, value)
+        }
+
+    var grep: String
+        get() = getPropertyAsString(GREP, "")
+        set(value) {
+            setProperty(GREP, value)
+        }
+
+    var grepInvert: String
+        get() = getPropertyAsString(GREP_INVERT, "")
+        set(value) {
+            setProperty(GREP_INVERT, value)
+        }
+
     override fun sample(entry: Entry?): SampleResult {
         val sampleStartTime = System.currentTimeMillis()
         runNpxPlaywrightTest(testDirectory, extraOptions)
@@ -71,11 +107,32 @@ class PlaywrightTestSampler : AbstractSampler() {
         try {
             val parts = arrayListOf("npx", "playwright", "test", "--reporter", "junit")
 
-            var cli = parts.joinToString(" ")
+            parts.add("--browser=" + browserType.toString().lowercase())
+
+            if (workerCount != 0){
+                parts.add("--workers=$workerCount")
+            }
+            if (repeatEach != 0) {
+                parts.add("--repeat-each=$repeatEach")
+            }
+            parts.add("--timeout=$timeout")
+            if (grep.isNotEmpty()) {
+                parts.add("--grep")
+                parts.add(grep)
+            }
+            if (grepInvert.isNotEmpty()) {
+                parts.add("--grep-invert")
+                parts.add(grepInvert)
+            }
+            if (configFile.exists()){
+                parts.add("--config=${configFile}")
+            }
+
             if (extraOptions.isNotEmpty())
-                cli = "$cli $extraOptions"
-            log.info("Launching $cli in directory ${workingDir}.")
-            this.proc = Runtime.getRuntime().exec(cli, null, workingDir)
+                parts.add(extraOptions)
+
+            log.info("Launching ${parts.joinToString(" ")} in directory ${workingDir}.")
+            this.proc = Runtime.getRuntime().exec(parts.toTypedArray(), null, workingDir)
         } catch(e: IOException) {
             log.error(e.message)
             log.error(e.stackTraceToString())
@@ -86,5 +143,11 @@ class PlaywrightTestSampler : AbstractSampler() {
         private const val BROWSER = "Playwright.browser"
         private const val TEST_DIRECTORY = "Playwright.testDirectory"
         private const val EXTRA_OPTIONS = "Playwright.extraOptions"
+        private const val CONFIG_FILE = "Playwright.configFile"
+        private const val WORKER_COUNT = "Playwright.workerCount"
+        private const val REPEAT_EACH = "Playwright.repeatEach"
+        private const val TIMEOUT = "Playwright.timeout"
+        private const val GREP = "Playwright.grep"
+        private const val GREP_INVERT = "Playwright.grepInvert"
     }
 }

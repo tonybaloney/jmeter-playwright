@@ -27,8 +27,15 @@
       </ThreadGroup>
       <hashTree>
         <com.microsoft.playwright.jmeter.samplers.PlaywrightTestSampler guiclass="com.microsoft.playwright.jmeter.samplers.PlaywrightTestSamplerGUI" testclass="com.microsoft.playwright.jmeter.samplers.PlaywrightTestSampler" testname="Playwright Test Sampler" enabled="true">
-          <stringProp name="Playwright.browser">Chromium</stringProp>
-          <stringProp name="Playwright.testDirectory">/Users/anthonyshaw/repos</stringProp>
+          <stringProp name="Playwright.browser">All</stringProp>
+          <stringProp name="Playwright.testDirectory">/Users/anthonyshaw/projects/contosotraders-cloudtesting/src/ContosoTraders.Ui.Website/tests</stringProp>
+          <stringProp name="Playwright.extraOptions"></stringProp>
+          <stringProp name="Playwright.configFile">/Users/anthonyshaw/projects/contosotraders-cloudtesting/src/ContosoTraders.Ui.Website/playwright.config.ts</stringProp>
+          <intProp name="Playwright.workerCount">2</intProp>
+          <intProp name="Playwright.repeatEach">2</intProp>
+          <intProp name="Playwright.timeout">30000</intProp>
+          <stringProp name="Playwright.grep">bing</stringProp>
+          <stringProp name="Playwright.grepInvert">iframe</stringProp>
         </com.microsoft.playwright.jmeter.samplers.PlaywrightTestSampler>
         <hashTree/>
       </hashTree>
