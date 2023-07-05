@@ -2,6 +2,7 @@ package com.microsoft.playwright.jmeter.samplers
 
 import com.microsoft.playwright.jmeter.junit.JUnitDeserializer
 import com.microsoft.playwright.jmeter.BrowserType
+import org.apache.jmeter.engine.JMeterEngineException
 import org.apache.jmeter.samplers.AbstractSampler
 import org.apache.jmeter.samplers.Entry
 import org.apache.jmeter.samplers.SampleResult
@@ -15,10 +16,17 @@ class PlaywrightTestSampler : AbstractSampler() {
     private var proc: Process? = null
     private val log = LoggerFactory.getLogger(ThreadGroup::class.java)
 
-    var testDirectory: File
-        get() = File(getPropertyAsString(TEST_DIRECTORY, ""))
+    var testDirectory: File?
+        get() {
+            val prop = getPropertyAsString(TEST_DIRECTORY, "")
+            return if (prop.isNullOrEmpty()) {
+                File(prop)
+            } else null
+        }
         set(value) {
-            setProperty(TEST_DIRECTORY, value.toString())
+            if (value == null) {
+                setProperty(TEST_DIRECTORY, "")
+            } else setProperty(TEST_DIRECTORY, value.toString())
         }
 
     var extraOptions: String
@@ -27,10 +35,17 @@ class PlaywrightTestSampler : AbstractSampler() {
             setProperty(EXTRA_OPTIONS, value)
         }
 
-    var configFile: File
-        get() = File(getPropertyAsString(CONFIG_FILE, ""))
+    var configFile: File?
+        get() {
+            val prop = getPropertyAsString(CONFIG_FILE, "")
+            return if (prop.isNullOrEmpty()) {
+                File(prop)
+            } else null
+        }
         set(value) {
-            setProperty(CONFIG_FILE, value.toString())
+            if (value == null) {
+                setProperty(CONFIG_FILE, "")
+            } else setProperty(CONFIG_FILE, value.toString())
         }
 
     var workerCount: Int
@@ -71,7 +86,9 @@ class PlaywrightTestSampler : AbstractSampler() {
 
     override fun sample(entry: Entry?): SampleResult {
         val sampleStartTime = System.currentTimeMillis()
-        runNpxPlaywrightTest(testDirectory, extraOptions)
+        if (testDirectory == null)
+            throw Exception("No test directory supplied")
+        runNpxPlaywrightTest(testDirectory!!, extraOptions)
         val sampleEndTime = System.currentTimeMillis()
         val result = proc?.inputStream?.bufferedReader()?.readText() ?: ""
         val errorResult = proc?.errorStream?.bufferedReader()?.readText() ?: ""
@@ -122,7 +139,7 @@ class PlaywrightTestSampler : AbstractSampler() {
                 parts.add("--grep-invert")
                 parts.add(grepInvert)
             }
-            if (configFile.exists()){
+            if (configFile != null && configFile!!.exists()){
                 parts.add("--config=${configFile}")
             }
             if (project.isNotEmpty()){
