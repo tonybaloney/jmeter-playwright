@@ -136,8 +136,8 @@ class PlaywrightTestSamplerGUI : AbstractSamplerGui() {
     override fun modifyTestElement(element: TestElement) {
         super.configureTestElement(element)
         if (element is PlaywrightTestSampler) {
-            element.testDirectory = testDirectory.selectedFile ?: testDirectory.currentDirectory
-            element.configFile = configFile.selectedFile ?: testDirectory.selectedFile
+            element.testDirectory = testDirectory.selectedFile
+            element.configFile = configFile.selectedFile
             element.workerCount = workerCount.value as Int
             element.timeout = timeout.value as Int
             element.repeatEach = repeatEach.value as Int
