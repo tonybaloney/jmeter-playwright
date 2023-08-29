@@ -151,10 +151,15 @@ class PlaywrightTestSampler : AbstractSampler() {
                 parts.add(extraOptions)
 
             log.info("Launching ${parts.joinToString(" ")} in directory ${workingDir}.")
-            this.proc = Runtime.getRuntime().exec(parts.toTypedArray(), null, workingDir)
+            val pb = ProcessBuilder(parts)
+            pb.directory(workingDir);
+            this.proc = pb.start()
         } catch(e: IOException) {
             log.error(e.message)
             log.error(e.stackTraceToString())
+            val processEnv = System.getenv()
+            val path = processEnv["PATH"]
+            log.error("Process Path was $path");
         }
     }
 
